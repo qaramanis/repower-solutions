@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Michroma } from "next/font/google";
 import "./globals.css";
+import HeaderNav from "../components/header-nav";
+
+const michroma = Michroma({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-michroma",
+});
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -13,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${michroma.variable}`}>
+        <HeaderNav />
+        {children}
+      </body>
     </html>
   );
 }
