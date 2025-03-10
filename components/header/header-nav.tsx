@@ -25,9 +25,9 @@ function HeaderLink({
       href={href}
       onMouseEnter={() => setIsHovered(index)}
       onMouseLeave={() => setIsHovered(null)}
-      className="text-white relative tracking-tight text-xl px-4 py-2 flex"
+      className="text-white relative tracking-tight text-xl px-4 py-2 flex items-center justify-center"
     >
-      <span className="z-10">{text}</span>
+      <span className="z-10 -mt-1">{text}</span>{" "}
       {isActive && isHovered === null && (
         <motion.span
           className="absolute inset-0 bg-[#9bd2ff]/15 rounded-full z-0"
