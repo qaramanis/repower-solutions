@@ -1,16 +1,13 @@
 "use client";
 
 import Aurora from "@/components/aurora";
-import { useEffect } from "react";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Position the Aurora at the very top edge of the page */}
       <div className="absolute top-0 left-0 right-0 h-20 z-10 overflow-hidden">
         <div className="-mt-10">
           {" "}
-          {/* Negative margin to move it higher */}
           <Aurora
             colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
             blend={0.5}
