@@ -96,7 +96,7 @@ export default function HeaderNav() {
     <div className="flex flex-row gap-2 ml-4">
       <HeaderLink
         key="product"
-        text="Product"
+        text="εταιρεία"
         href="#"
         isActive={true}
         isHovered={isHovered}
@@ -105,7 +105,7 @@ export default function HeaderNav() {
       />
       <HeaderLink
         key="pricing"
-        text="Pricing"
+        text="υπηρεσες"
         href="#"
         isActive={false}
         isHovered={isHovered}
@@ -114,12 +114,21 @@ export default function HeaderNav() {
       />
       <HeaderLink
         key="company"
-        text="Company"
+        text="εργα"
         href="#"
         isActive={false}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
         index={2}
+      />
+      <HeaderLink
+        key="company"
+        text="blog"
+        href="#"
+        isActive={false}
+        isHovered={isHovered}
+        setIsHovered={setIsHovered}
+        index={3}
       />
     </div>
   );
