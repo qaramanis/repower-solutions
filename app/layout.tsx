@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Michroma } from "next/font/google";
+import { Ysabeau_SC } from "next/font/google";
 import "./globals.css";
-import HeaderNav from "../components/header-nav";
+import HeaderNav from "../components/header/header-nav";
 
-const michroma = Michroma({
+const ysabeauSC = Ysabeau_SC({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-michroma",
+  variable: "--font-ysabeau-sc",
 });
 
 export const metadata: Metadata = {
-  title: "My Next.js App",
-  description: "My custom Next.js application",
+  title: "Repower Solutions",
+  description:
+    "REPOWER SOLUTIONS - Τεχνική Κατασκευαστική Εταιρεία - Φωτοβολταϊκά - Αντλίες Θερμότητας - Πρόγραμμα Εξοικονομώ - Ανακαινίσεις",
 };
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${michroma.variable}`}>
+      <body className={`${ysabeauSC.variable}`}>
         <HeaderNav />
         {children}
       </body>
