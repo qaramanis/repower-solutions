@@ -30,15 +30,6 @@ export default function HeaderNav() {
         index={1}
       />
       <HeaderLink
-        key="erga"
-        text="εργα"
-        href="#"
-        isActive={false}
-        isHovered={isHovered}
-        setIsHovered={setIsHovered}
-        index={2}
-      />
-      <HeaderLink
         key="epikoinonia"
         text="επικοινωνια"
         href="#"
