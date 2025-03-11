@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-ysabeau-sc: "Ysabeau SC", sans-serif;
+  --font-ponomar: "Ponomar", serif;
   --background: #ffffff;
-  --foreground: #ffffff;
+  --foreground: #000000;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
@@ -129,13 +129,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
   }
 }
 

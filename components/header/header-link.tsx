@@ -21,12 +21,12 @@ export default function HeaderLink({
       href={href}
       onMouseEnter={() => setIsHovered(index)}
       onMouseLeave={() => setIsHovered(null)}
-      className="text-white relative tracking-tight text-3xl px-4 py-2 flex items-center justify-center"
+      className="text-black relative tracking-tight text-3xl px-4 py-2 flex items-center justify-center"
     >
       <span className="z-10 -mt-2">{text}</span>{" "}
       {isActive && isHovered === null && (
         <motion.span
-          className="absolute inset-0 bg-[#9bd2ff]/15 rounded-full z-0"
+          className="absolute inset-0 bg-[#9bd2ff]/45 rounded-full z-0"
           layoutId="header-link-underline"
           transition={{
             duration: 0.8,
@@ -36,7 +36,7 @@ export default function HeaderLink({
       )}
       {isHovered === index && (
         <motion.span
-          className="absolute inset-0 bg-[#9bd2ff]/15 rounded-full z-0"
+          className="absolute inset-0 bg-[#9bd2ff]/45 rounded-full z-0"
           layoutId="header-link-underline"
           transition={{
             duration: 0.8,
