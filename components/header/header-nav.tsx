@@ -12,7 +12,7 @@ export default function HeaderNav() {
   return (
     <div className="flex flex-row gap-2 ml-4">
       <HeaderLink
-        key="εταιρεια"
+        key="etaireia"
         text="εταιρεια"
         href="#"
         isActive={true}
@@ -21,7 +21,7 @@ export default function HeaderNav() {
         index={0}
       />
       <HeaderLink
-        key="υπηρεσιες"
+        key="yphresies"
         text="υπηρεσιες"
         href="#"
         isActive={false}
@@ -30,7 +30,7 @@ export default function HeaderNav() {
         index={1}
       />
       <HeaderLink
-        key="εργα"
+        key="erga"
         text="εργα"
         href="#"
         isActive={false}

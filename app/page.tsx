@@ -1,11 +1,11 @@
 "use client";
 
-import { HomeHero } from "@/components/home/hero";
+import Home from "@/components/home/home";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="relative min-h-screen">
-      <HomeHero />
+      <Home />
     </div>
   );
 }

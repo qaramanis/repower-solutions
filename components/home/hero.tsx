@@ -1,10 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Aurora from "@/components/aurora";
 import { MoveDown } from "lucide-react";
 
-export function HomeHero() {
+export default function Hero() {
   const scrollToNextSection = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -13,7 +12,10 @@ export function HomeHero() {
   };
 
   return (
-    <section className="relative w-screen h-screen flex flex-col items-center justify-center text-center px-4">
+    <section
+      id="hero"
+      className="relative w-screen h-screen flex flex-col items-center justify-center text-center px-4"
+    >
       <div className="max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
           Τεχνικες
@@ -34,8 +36,9 @@ export function HomeHero() {
           variant="secondary"
           className="rounded-full p-2 cursor-pointer"
           aria-label="Scroll down"
+          size="lg"
         >
-          <MoveDown size={24} />
+          <MoveDown size={64} />
         </Button>
       </div>
     </section>
