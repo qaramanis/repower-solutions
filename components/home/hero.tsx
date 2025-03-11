@@ -30,7 +30,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="absolute bottom-10">
+      <div className="absolute bottom-3/10">
         <Button
           onClick={scrollToNextSection}
           variant="secondary"

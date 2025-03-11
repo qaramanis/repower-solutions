@@ -8,9 +8,8 @@ export default function Services() {
     >
       <div className="container mx-auto max-w-6xl px-4">
         <div className="flex flex-col md:flex-row gap-10">
-          {/* Fixed left side - Note the height adjustment */}
           <div
-            className="md:w-2/5 md:sticky md:top-24 h-fit"
+            className="md:w-2/5 md:sticky md:top-32 h-fit"
             style={{ alignSelf: "flex-start" }}
           >
             <h2 className="text-5xl font-bold mb-8">
@@ -18,24 +17,22 @@ export default function Services() {
             </h2>
             <div className="flex flex-col space-y-4">
               {/* Navigation buttons would go here */}
-              <button className="text-left text-lg hover:text-white/80 transition-colors">
+              <button className="text-left text-lg hover:text-gray-600 transition-colors">
                 Φωτοβολταϊκά
               </button>
-              <button className="text-left text-lg hover:text-white/80 transition-colors">
+              <button className="text-left text-lg hover:text-gray-6Z00 transition-colors">
                 Αντλίες θερμότητας
               </button>
-              <button className="text-left text-lg hover:text-white/80 transition-colors">
+              <button className="text-left text-lg hover:text-gray-600 transition-colors">
                 Πρόγραμμα Εξοικονομώ
               </button>
-              <button className="text-left text-lg hover:text-white/80 transition-colors">
+              <button className="text-left text-lg hover:text-gray-600 transition-colors">
                 Ανακαινίσεις
               </button>
             </div>
           </div>
 
-          {/* Scrollable right side - adding substantial content to enable scrolling */}
           <div className="md:w-3/5 space-y-32 pb-20">
-            {/* First section */}
             <div className="min-h-[60vh]">
               <h3 className="text-3xl font-semibold mb-6">Φωτοβολταϊκά</h3>
               <p className="text-lg  max-w-xl mb-8">
