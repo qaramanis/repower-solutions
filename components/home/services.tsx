@@ -3,7 +3,6 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { useInView } from "@/hooks/useInView";
 
 const SERVICES_DATA = [
   {
@@ -21,8 +20,10 @@ const SERVICES_DATA = [
     description: [
       "Ο τεχνικός ασφαλείας παρέχει συμβουλευτηκές και υποστηρικτικές υπηρεσίες σε επιχειρήσεις, εγκυόντας την ασφάλεια και την υγιεινή των εργαζομένων",
       "Σε εταιρείες με εώς 50 εργαζόμενους αναλαμβάνουμε εξ' ολοκλήρου τον ρόλο του τεχνικού ασφαλείας, ενώ σε μεγαλύτερες επιχειρήσεις απαιτείται η συνεργασία με γιατρό εργασίας",
+      //TODO: complete
     ],
   },
+
   {
     id: "exoikonomo",
     title: "Πρόγραμμα Εξοικονομώ",
@@ -84,14 +85,12 @@ const SERVICES_DATA = [
 ];
 
 export default function Services() {
-  const [servicesSectionRef, isServicesInView] = useInView(0.1);
   const [activeSection, setActiveSection] = useState<string>(
     SERVICES_DATA[0].id
   );
   const sectionRefs = useRef<Record<string, React.RefObject<HTMLDivElement>>>(
     {}
   );
-
   useEffect(() => {
     SERVICES_DATA.forEach((service) => {
       sectionRefs.current[service.id] =
@@ -158,7 +157,6 @@ export default function Services() {
   return (
     <section
       id="services"
-      ref={servicesSectionRef as React.RefObject<HTMLElement>}
       className="relative w-full min-h-screen bg-transparent text-black py-20"
     >
       <div className="container mx-auto max-w-8xl px-4">
@@ -167,10 +165,7 @@ export default function Services() {
             className="md:w-2/5 md:sticky md:top-32 h-fit"
             style={{ alignSelf: "flex-start" }}
             initial={{ opacity: 0, x: -20 }}
-            animate={{
-              opacity: isServicesInView ? 1 : 0,
-              x: isServicesInView ? 0 : -20,
-            }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
           >
             <h2 className="text-6xl font-bold mb-8">Προσφερομενες Υπηρεσιες</h2>
@@ -206,20 +201,11 @@ export default function Services() {
                 className="min-h-[75vh] pt-8 -mt-8"
                 initial={{ opacity: 0 }}
                 animate={{
-                  opacity: isServicesInView
-                    ? activeSection === service.id
-                      ? 1
-                      : 0.3
-                    : 0,
-                  y: isServicesInView
-                    ? activeSection === service.id
-                      ? 0
-                      : 20
-                    : 40,
-                  scale: activeSection === service.id ? 1 : 0.98,
+                  opacity: activeSection === service.id ? 1 : 0.6,
+                  y: activeSection === service.id ? 0 : 10,
                 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 0.5,
                   ease: [0.175, 0.885, 0.32, 1],
                 }}
               >
@@ -227,16 +213,8 @@ export default function Services() {
                   className="text-5xl font-semibold mb-6"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{
-                    y: isServicesInView
-                      ? activeSection === service.id
-                        ? 0
-                        : 20
-                      : 40,
-                    opacity: isServicesInView
-                      ? activeSection === service.id
-                        ? 1
-                        : 0.5
-                      : 0,
+                    y: activeSection === service.id ? 0 : 20,
+                    opacity: activeSection === service.id ? 1 : 0.8,
                   }}
                   transition={{
                     duration: 0.6,
@@ -252,19 +230,11 @@ export default function Services() {
                       key={index}
                       initial={{ y: 30, opacity: 0 }}
                       animate={{
-                        y: isServicesInView
-                          ? activeSection === service.id
-                            ? 0
-                            : 30
-                          : 60,
-                        opacity: isServicesInView
-                          ? activeSection === service.id
-                            ? 1
-                            : 0
-                          : 0,
+                        y: activeSection === service.id ? 0 : 30,
+                        opacity: activeSection === service.id ? 1 : 0,
                       }}
                       transition={{
-                        duration: 0.8,
+                        duration: 0.6,
                         ease: [0.175, 0.885, 0.32, 1],
                         delay: 0.2 + index * 0.1,
                       }}

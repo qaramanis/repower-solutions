@@ -47,7 +47,7 @@ export default function FooterNav() {
             <Linkedin size={20} />
           </Link>
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/people/RePower-Solutions/61573024402149/"
             aria-label="facebook"
             className="hover:text-gray-300 transition-colors"
           >

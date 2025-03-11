@@ -11,34 +11,39 @@ export default function HeaderNav() {
 
   // Track scroll position to update active section
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
+    const sections = ["hero", "services", "contact"];
 
-      // Define section breakpoints
-      if (scrollPosition < windowHeight * 0.5) {
-        setActiveSection("hero");
-      } else if (scrollPosition < windowHeight * 2) {
-        setActiveSection("services");
-      } else {
-        setActiveSection("contact");
-      }
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px", // Adjust this value as needed
+      threshold: 0,
     };
 
-    window.addEventListener("scroll", handleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
     };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       const offsetPosition = sectionId === "hero" ? 0 : element.offsetTop - 90;
-
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
