@@ -20,7 +20,7 @@ export default function Services() {
               <button className="text-left text-lg hover:text-gray-600 transition-colors">
                 Φωτοβολταϊκά
               </button>
-              <button className="text-left text-lg hover:text-gray-6Z00 transition-colors">
+              <button className="text-left text-lg hover:text-gray-600 transition-colors">
                 Αντλίες θερμότητας
               </button>
               <button className="text-left text-lg hover:text-gray-600 transition-colors">
@@ -41,10 +41,8 @@ export default function Services() {
                 ολοκληρωμένες λύσεις φωτοβολταϊκών συστημάτων για οικιακή και
                 επαγγελματική χρήση.
               </p>
-              <div className="bg-white/5 rounded-lg h-64 w-full"></div>
             </div>
 
-            {/* Second section */}
             <div className="min-h-[60vh] text-black">
               <h3 className="text-3xl font-semibold mb-6">
                 Αντλίες θερμότητας
@@ -54,10 +52,8 @@ export default function Services() {
                 λύση για θέρμανση και ψύξη. Προσφέρουμε εγκατάσταση και
                 συντήρηση αντλιών θερμότητας από κορυφαίους κατασκευαστές.
               </p>
-              <div className="bg-white/5 rounded-lg h-64 w-full"></div>
             </div>
 
-            {/* Third section */}
             <div className="min-h-[60vh]">
               <h3 className="text-3xl font-semibold mb-6">
                 Πρόγραμμα Εξοικονομώ
@@ -68,10 +64,8 @@ export default function Services() {
                 του έργου. Η ομάδα μας έχει μεγάλη εμπειρία στη διαχείριση
                 τέτοιων επιδοτούμενων προγραμμάτων.
               </p>
-              <div className="bg-white/5 rounded-lg h-64 w-full"></div>
             </div>
 
-            {/* Fourth section */}
             <div className="min-h-[60vh]">
               <h3 className="text-3xl font-semibold mb-6">Ανακαινίσεις</h3>
               <p className="text-lg max-w-xl mb-8">
@@ -80,7 +74,6 @@ export default function Services() {
                 ανακαινίσεις, η ομάδα μας αναλαμβάνει όλες τις εργασίες με
                 συνέπεια.
               </p>
-              <div className="bg-white/5 rounded-lg h-64 w-full"></div>
             </div>
           </div>
         </div>
