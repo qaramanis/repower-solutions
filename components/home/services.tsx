@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 
 const SERVICES_DATA = [
   {
@@ -120,7 +121,6 @@ export default function Services() {
   const handleScroll = () => {
     const scrollPosition = window.scrollY + 200;
 
-    // Map services to their positions
     const sectionPositions = SERVICES_DATA.map((service) => {
       const ref = sectionRefs.current[service.id];
       if (!ref?.current) return { id: service.id, top: 0, bottom: 0 };
@@ -134,7 +134,6 @@ export default function Services() {
       };
     });
 
-    // Find current active section
     for (const section of sectionPositions) {
       if (scrollPosition >= section.top && scrollPosition < section.bottom) {
         if (activeSection !== section.id) {
@@ -162,31 +161,36 @@ export default function Services() {
     >
       <div className="container mx-auto max-w-8xl px-4">
         <div className="flex flex-col md:flex-row gap-75">
-          <div
+          <motion.div
             className="md:w-2/5 md:sticky md:top-32 h-fit"
             style={{ alignSelf: "flex-start" }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
           >
-            <h2 className="text-5xl font-bold mb-8">Προσφερομενες Υπηρεσιες</h2>
+            <h2 className="text-6xl font-bold mb-8">Προσφερομενες Υπηρεσιες</h2>
             <div className="flex flex-col space-y-4">
               {SERVICES_DATA.map((service) => (
-                <button
+                <motion.button
                   key={service.id}
-                  className={`text-left text-lg transition-colors ${
+                  className={`text-left text-2xl text-black/90 transition-colors ${
                     activeSection === service.id
                       ? "text-primary font-semibold"
                       : "hover:text-gray-600"
                   }`}
                   onClick={() => scrollToSection(service.id)}
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.1 }}
                 >
                   {service.title}
-                </button>
+                </motion.button>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           <div className="md:w-3/5 space-y-32 pb-20">
             {SERVICES_DATA.map((service) => (
-              <div
+              <motion.div
                 key={service.id}
                 ref={(ref) => {
                   if (ref) {
@@ -195,14 +199,51 @@ export default function Services() {
                 }}
                 id={service.id}
                 className="min-h-[75vh] pt-8 -mt-8"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSection === service.id ? 1 : 0.6,
+                  y: activeSection === service.id ? 0 : 10,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.175, 0.885, 0.32, 1],
+                }}
               >
-                <h3 className="text-3xl font-semibold mb-6">{service.title}</h3>
-                <div className="text-lg max-w-xl mb-8 space-y-4">
+                <motion.h3
+                  className="text-5xl font-semibold mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{
+                    y: activeSection === service.id ? 0 : 20,
+                    opacity: activeSection === service.id ? 1 : 0.8,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.175, 0.885, 0.32, 1],
+                    delay: 0.1,
+                  }}
+                >
+                  {service.title}
+                </motion.h3>
+                <div className="text-2xl max-w-xl mb-8 space-y-4">
                   {service.description.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
+                    <motion.p
+                      key={index}
+                      initial={{ y: 30, opacity: 0 }}
+                      animate={{
+                        y: activeSection === service.id ? 0 : 30,
+                        opacity: activeSection === service.id ? 1 : 0,
+                      }}
+                      transition={{
+                        duration: 0.6,
+                        ease: [0.175, 0.885, 0.32, 1],
+                        delay: 0.2 + index * 0.1,
+                      }}
+                    >
+                      {paragraph}
+                    </motion.p>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
