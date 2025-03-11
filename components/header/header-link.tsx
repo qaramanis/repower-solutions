@@ -36,7 +36,7 @@ export default function HeaderLink({
       <span className="z-10 -mt-2">{text}</span>{" "}
       {isActive && isHovered === null && (
         <motion.span
-          className="absolute inset-0 bg-[#9bd2ff]/45 rounded-full z-0"
+          className="absolute inset-0 bg-[#ffffff]/45 rounded-full z-0"
           layoutId="header-link-underline"
           transition={{
             duration: 0.8,
@@ -46,7 +46,7 @@ export default function HeaderLink({
       )}
       {isHovered === index && (
         <motion.span
-          className="absolute inset-0 bg-[#9bd2ff]/45 rounded-full z-0"
+          className="absolute inset-0 bg-[#ffffff]/45 rounded-full z-0"
           layoutId="header-link-underline"
           transition={{
             duration: 0.8,

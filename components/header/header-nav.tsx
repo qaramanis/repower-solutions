@@ -34,7 +34,6 @@ export default function HeaderNav() {
     };
   }, []);
 
-  // Scroll to section function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -48,7 +47,7 @@ export default function HeaderNav() {
   };
 
   return (
-    <div className="flex flex-row gap-2 ml-4">
+    <div className="flex flex-row gap-2 ml-4 ">
       <HeaderLink
         key="hero"
         text="αρχικη"
@@ -66,7 +65,7 @@ export default function HeaderNav() {
         isActive={activeSection === "services"}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
-        index={1}
+        index={11}
         onClick={() => scrollToSection("services")}
       />
       <HeaderLink
@@ -76,7 +75,7 @@ export default function HeaderNav() {
         isActive={activeSection === "contact"}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
-        index={2}
+        index={22}
         onClick={() => scrollToSection("contact")}
       />
     </div>

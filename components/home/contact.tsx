@@ -10,13 +10,9 @@ export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Set isVisible based on whether the section is in the viewport
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    });
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
@@ -40,7 +36,7 @@ export default function Contact() {
           className="mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1] }}
         >
           <h2 className="text-6xl font-bold mb-8">Επικοινωνία</h2>
           <p className="text-2xl max-w-3xl">
@@ -58,7 +54,7 @@ export default function Contact() {
                 isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
               }
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.2,
               }}
@@ -73,7 +69,7 @@ export default function Contact() {
                 isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
               }
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.3,
               }}
@@ -92,7 +88,7 @@ export default function Contact() {
                 isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
               }
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.4,
               }}
@@ -111,7 +107,7 @@ export default function Contact() {
                 isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
               }
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.5,
               }}
@@ -130,7 +126,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.3,
               }}
@@ -150,7 +146,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.4,
               }}
@@ -170,7 +166,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.5,
               }}
@@ -189,7 +185,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{
-                duration: 0.8,
+                duration: 1.5,
                 ease: [0.23, 1, 0.32, 1],
                 delay: 0.6,
               }}
