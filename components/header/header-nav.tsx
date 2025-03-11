@@ -39,8 +39,8 @@ export default function HeaderNav() {
         index={2}
       />
       <HeaderLink
-        key="blog"
-        text="blog"
+        key="epikoinonia"
+        text="επικοινωνια"
         href="#"
         isActive={false}
         isHovered={isHovered}

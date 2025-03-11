@@ -6,7 +6,7 @@ import { MoveDown } from "lucide-react";
 export default function Hero() {
   const scrollToNextSection = () => {
     window.scrollTo({
-      top: window.innerHeight,
+      top: window.innerHeight - 45,
       behavior: "smooth",
     });
   };
