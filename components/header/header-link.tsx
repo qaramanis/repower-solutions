@@ -8,6 +8,7 @@ export default function HeaderLink({
   isHovered,
   setIsHovered,
   index,
+  onClick,
 }: {
   text: string;
   href: string;
@@ -15,12 +16,21 @@ export default function HeaderLink({
   isHovered: number | null;
   setIsHovered: (isHovered: number | null) => void;
   index: number;
+  onClick?: () => void;
 }) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <Link
       href={href}
       onMouseEnter={() => setIsHovered(index)}
       onMouseLeave={() => setIsHovered(null)}
+      onClick={handleClick}
       className="text-black relative tracking-tight text-3xl px-4 py-2 flex items-center justify-center"
     >
       <span className="z-10 -mt-2">{text}</span>{" "}
