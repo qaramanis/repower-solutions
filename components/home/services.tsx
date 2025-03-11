@@ -160,8 +160,8 @@ export default function Services() {
       id="services"
       className="relative w-full min-h-screen bg-transparent text-black py-20"
     >
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="flex flex-col md:flex-row gap-10">
+      <div className="container mx-auto max-w-8xl px-4">
+        <div className="flex flex-col md:flex-row gap-75">
           <div
             className="md:w-2/5 md:sticky md:top-32 h-fit"
             style={{ alignSelf: "flex-start" }}
