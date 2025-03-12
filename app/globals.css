@@ -45,8 +45,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-ysabeau-sc), system-ui, -apple-system,
-    /* Updated font variable */ BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .dark {

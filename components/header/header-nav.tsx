@@ -15,7 +15,7 @@ export default function HeaderNav() {
 
     const observerOptions = {
       root: null,
-      rootMargin: "-40% 0px", // Adjust this value as needed
+      rootMargin: "-40% 0px",
       threshold: 0,
     };
 

@@ -3,6 +3,7 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import ScrollReveal from "../scroll-reveal";
 
 const SERVICES_DATA = [
   {
@@ -209,7 +210,7 @@ export default function Services() {
                   ease: [0.175, 0.885, 0.32, 1],
                 }}
               >
-                <motion.h3
+                {/* <motion.h3
                   className="text-5xl font-semibold mb-6"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{
@@ -223,7 +224,15 @@ export default function Services() {
                   }}
                 >
                   {service.title}
-                </motion.h3>
+                </motion.h3> */}
+                <ScrollReveal
+                  baseOpacity={0}
+                  enableBlur={false}
+                  baseRotation={10}
+                  blurStrength={10}
+                >
+                  {service.title}
+                </ScrollReveal>
                 <div className="text-2xl max-w-xl mb-8 space-y-4">
                   {service.description.map((paragraph, index) => (
                     <motion.p
