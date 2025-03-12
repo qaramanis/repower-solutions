@@ -1,6 +1,5 @@
 "use client";
 
-import Contact from "@/components/home/contact";
 import FooterNav from "@/components/footer/footer";
 import Home from "@/components/home/home";
 

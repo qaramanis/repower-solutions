@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Repower Solutions",
   description:
     "REPOWER SOLUTIONS - Τεχνική Κατασκευαστική Εταιρεία - Φωτοβολταϊκά - Αντλίες Θερμότητας - Πρόγραμμα Εξοικονομώ - Ανακαινίσεις",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
