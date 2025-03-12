@@ -29,7 +29,6 @@ export default function PageLoader({
 
   useEffect(() => {
     if (!isLoading) {
-      // Add a small delay before removing from DOM
       const timer = setTimeout(() => {
         setIsVisible(false);
       }, transitionDuration);
@@ -61,7 +60,7 @@ export default function PageLoader({
             }}
             transition={{
               duration: transitionDuration / 1000,
-              ease: [0.19, 1, 0.22, 1], // Exponential easing
+              ease: [0.19, 1, 0.22, 1],
             }}
           >
             <RepowerLogoLoader />

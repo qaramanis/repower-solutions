@@ -15,40 +15,42 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-screen h-screen flex flex-col items-center justify-center text-center px-4"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-4"
     >
-      <div className="absolute max-w-4xl top-35/100">
-        <h1 className="text-8xl font-extrabold tracking-tight mb-6">
-          Τεχνικες
-          <br />
-          ενεργειακες λυσεις
+      <div className="absolute max-w-4xl top-1/3 md:top-35/100 px-4">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-4 md:mb-6">
+          <span className="block">Τεχνικες</span>
+          <span className="block">ενεργειακες λυσεις</span>
         </h1>
 
-        <p className="text-lg md:text-2xl mt-4 max-w-2xl mx-auto">
-          εξοικονομηση ενεργειας και αναβαθμιση του χωρου σας
-          <br />
-          με τις πιο συγχρονες και αποδοτικες λυσεις
+        <p className="text-base sm:text-lg md:text-2xl mt-2 md:mt-4 max-w-2xl mx-auto">
+          <span className="block">
+            εξοικονομηση ενεργειας και αναβαθμιση του χωρου σας
+          </span>
+          <span className="block mt-1 md:mt-0">
+            με τις πιο συγχρονες και αποδοτικες λυσεις
+          </span>
         </p>
       </div>
-      <div className="absolute w-full bottom-1/10">
+      <div className="absolute w-full bottom-1/10 md:bottom-1/10 sm:block">
         <ScrollVelocity
           texts={[
             "repower solutions repower solutions",
             "repower solutions repower solutions",
           ]}
           velocity={50}
-          className="text-5xl font-semibold font-display"
+          className="text-3xl md:text-5xl font-semibold font-display"
         />
       </div>
       <div className="absolute bottom-5/100">
         <Button
           onClick={scrollToNextSection}
           variant="secondary"
-          className="rounded-full p-2 cursor-pointer transition-transform duration-200 hover:scale-110"
+          className="rounded-full p-1 md:p-2 cursor-pointer transition-transform duration-200 hover:scale-110"
           aria-label="Scroll down"
-          size="lg"
+          size="icon"
         >
-          <MoveDown size={64} />
+          <MoveDown size={32} className="md:w-12 md:h-12" />
         </Button>
       </div>
     </section>

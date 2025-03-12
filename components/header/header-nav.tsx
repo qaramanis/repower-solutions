@@ -9,7 +9,6 @@ export default function HeaderNav() {
   const [isHovered, setIsHovered] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<string>("hero");
 
-  // Track scroll position to update active section
   useEffect(() => {
     const sections = ["hero", "services", "contact"];
 
@@ -43,7 +42,7 @@ export default function HeaderNav() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetPosition = sectionId === "hero" ? 0 : element.offsetTop - 90;
+      const offsetPosition = sectionId === "hero" ? 0 : element.offsetTop - 45;
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -52,11 +51,11 @@ export default function HeaderNav() {
   };
 
   return (
-    <div className="flex flex-row gap-2 ml-4 ">
+    <div className="flex flex-row gap-1 md:gap-2">
       <HeaderLink
         key="hero"
         text="αρχικη"
-        href="#hero"
+        href="#"
         isActive={activeSection === "hero"}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
@@ -66,7 +65,7 @@ export default function HeaderNav() {
       <HeaderLink
         key="services"
         text="υπηρεσιες"
-        href="#services"
+        href="#"
         isActive={activeSection === "services"}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
@@ -76,7 +75,7 @@ export default function HeaderNav() {
       <HeaderLink
         key="contact"
         text="επικοινωνια"
-        href="#contact"
+        href="#"
         isActive={activeSection === "contact"}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
