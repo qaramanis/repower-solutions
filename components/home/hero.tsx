@@ -35,8 +35,8 @@ export default function Hero() {
       <div className="absolute w-full bottom-1/10 md:bottom-1/10 sm:block">
         <ScrollVelocity
           texts={[
-            "repower solutions repower solutions",
-            "repower solutions repower solutions",
+            "η/μ εργα | τεχνικοσ ασφαλειας | αδειοδοτησεισ | ανακαινησεισ | κουφωματα |",
+            "repower solutions | repower solutions |",
           ]}
           velocity={50}
           className="text-3xl md:text-5xl font-semibold font-display"
