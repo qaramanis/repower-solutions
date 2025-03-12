@@ -125,14 +125,11 @@ const DecayCard: React.FC<DecayCardProps> = ({
     };
   }, []);
 
-  // Calculate aspect ratio for proper scaling
   const aspectRatio = width / height;
 
-  // Create viewBox dimensions that respect the original aspect ratio
   const viewBoxWidth = 600;
   const viewBoxHeight = viewBoxWidth / aspectRatio;
 
-  // Center the viewBox
   const viewBoxX = -viewBoxWidth * 0.05;
   const viewBoxY = -viewBoxHeight * 0.05;
 
