@@ -4,6 +4,7 @@ import "./globals.css";
 import AuroraHeader from "@/components/header/aurora-header";
 import { SiteHeader } from "@/components/header/site-header";
 import PageLoader from "@/components/loader/page-loader";
+import CardBackground from "@/components/home/card-background";
 
 const ysabeauSC = Ysabeau_SC({
   weight: "400",
@@ -29,9 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ysabeauSC.variable}`}>
         <PageLoader initialDelay={2000} transitionDuration={800}>
-          <div className="fixed top-0 left-0 right-0 h-20 z-0 overflow-hidden">
+          <div >
             <AuroraHeader />
           </div>
+          <CardBackground />
           <SiteHeader />
           {children}
         </PageLoader>
