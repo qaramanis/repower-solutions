@@ -19,7 +19,6 @@ export default function PageLoader({
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Set a timeout to hide the loader
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, initialDelay);

@@ -6,17 +6,18 @@ export default function RepowerLogoLoader() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      viewBox="0 0 30 24"
       fill="none"
       stroke="#77B254"
-      strokeWidth="2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-[200px]"
+      className="w-[200px] ml-16"
     >
-      <path d="M6 18 Q2 18 2 14, T2 10 Q2 6 6 6, M6 6 8 6, M13 18 15 18 Q19 18 19 14,T19 10 Q19 6 15 6"></path>
-      <path d="M22 13 22 11" />
-      <path d="M12 6 8 12 14 12 9 18">
+      <path d="M6 18 Q2 18 2 14 T2 10 Q2 6 6 6 M6 6 H8" />
+      <path d="M13 18 H15 Q19 18 19 14 T19 10 Q19 6 15 6" />
+      <path d="M22 13 V11" />
+      <path d="M12 6 L8 12 H14 L9 18">
         <animate
           attributeName="stroke"
           values="#FFA725;#77B254;#FFA725;"

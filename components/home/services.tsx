@@ -130,7 +130,7 @@ export default function Services() {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       return {
         id: service.id,
-        top: rect.top + scrollTop - 250,
+        top: rect.top + scrollTop - 500,
         bottom: rect.bottom + scrollTop - 500,
       };
     });
