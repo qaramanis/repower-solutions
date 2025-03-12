@@ -5,19 +5,15 @@ import DecayCard from "../decay-card";
 export default function CardBackground() {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if the device is mobile based on screen width
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
     checkMobile();
 
-    // Add event listener for window resize
     window.addEventListener("resize", checkMobile);
 
-    // Cleanup event listener
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
@@ -25,9 +21,8 @@ export default function CardBackground() {
     <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-0 overflow-hidden">
       <div className="relative w-full max-w-5xl h-screen">
         {/* Center card - show different versions based on device */}
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-85 blur-[4px]">
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-75 blur-[4px]">
           {isMobile ? (
-            // Stable image for mobile
             <div className="w-[280px] h-[280px] relative">
               <img
                 src="/rs-transparent-128-128.svg"
@@ -36,7 +31,6 @@ export default function CardBackground() {
               />
             </div>
           ) : (
-            // Interactive DecayCard for desktop
             <DecayCard
               width={360}
               height={360}

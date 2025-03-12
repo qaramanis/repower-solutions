@@ -25,8 +25,9 @@ export default function Hero() {
 
         <p className="text-base sm:text-lg md:text-2xl mt-2 md:mt-4 max-w-2xl mx-auto">
           <span className="block">
-            εξοικονομηση ενεργειας και αναβαθμιση του χωρου σας
+            εξοικονομηση ενεργειας και αναβαθμιση του χωρου
           </span>
+          <span className="block">και αναβαθμιση του χωρου σας</span>
           <span className="block mt-1 md:mt-0">
             με τις πιο συγχρονες και αποδοτικες λυσεις
           </span>
