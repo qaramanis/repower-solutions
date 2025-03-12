@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Resend } from "resend";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
