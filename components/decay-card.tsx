@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, ReactNode } from "react";
 import { gsap } from "gsap";
 
@@ -16,14 +18,12 @@ const DecayCard: React.FC<DecayCardProps> = ({
 }) => {
   const svgRef = useRef<HTMLDivElement | null>(null);
   const displacementMapRef = useRef<SVGFEDisplacementMapElement | null>(null);
-  const cursor = useRef<{ x: number; y: number }>({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
-  });
-  const cachedCursor = useRef<{ x: number; y: number }>({ ...cursor.current });
+
+  const cursor = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const cachedCursor = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const winsize = useRef<{ width: number; height: number }>({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const DecayCard: React.FC<DecayCardProps> = ({
       a: number,
       b: number,
       c: number,
-      d: number
+      d: number,
     ): number => ((x - a) * (d - c)) / (b - a) + c;
     const distance = (x1: number, x2: number, y1: number, y2: number): number =>
       Math.hypot(x1 - x2, y1 - y2);
@@ -62,17 +62,17 @@ const DecayCard: React.FC<DecayCardProps> = ({
       let targetX = lerp(
         imgValues.imgTransforms.x,
         map(cursor.current.x, 0, winsize.current.width, -120, 120),
-        0.1
+        0.1,
       );
       let targetY = lerp(
         imgValues.imgTransforms.y,
         map(cursor.current.y, 0, winsize.current.height, -120, 120),
-        0.1
+        0.1,
       );
       let targetRz = lerp(
         imgValues.imgTransforms.rz,
         map(cursor.current.x, 0, winsize.current.width, -10, 10),
-        0.1
+        0.1,
       );
 
       // Apply elastic bounds to limit movement within 50px in any direction
@@ -98,12 +98,12 @@ const DecayCard: React.FC<DecayCardProps> = ({
         cachedCursor.current.x,
         cursor.current.x,
         cachedCursor.current.y,
-        cursor.current.y
+        cursor.current.y,
       );
       imgValues.displacementScale = lerp(
         imgValues.displacementScale,
         map(cursorTravelledDistance, 0, 200, 0, 400),
-        0.06
+        0.06,
       );
 
       if (displacementMapRef.current) {
