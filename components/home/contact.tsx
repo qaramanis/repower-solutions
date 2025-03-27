@@ -4,11 +4,72 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Resend } from "resend";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+
+  // Handle form input changes
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Παρακαλώ συμπληρώστε όλα τα πεδία");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          contents: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus("idle");
+      }, 5000);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -121,7 +182,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          <div className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <motion.div
               className="space-y-2"
               initial={{ opacity: 0, x: 20 }}
@@ -138,6 +199,8 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </motion.div>
@@ -158,6 +221,8 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </motion.div>
@@ -178,6 +243,8 @@ export default function Contact() {
               <textarea
                 id="message"
                 rows={5}
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               ></textarea>
             </motion.div>
@@ -191,9 +258,28 @@ export default function Contact() {
                 delay: 0.6,
               }}
             >
-              <Button className="px-8 py-2.5  text-lg">Αποστολή</Button>
+              <Button
+                type="submit"
+                className="px-8 py-2.5 text-lg"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Αποστολή..." : "Αποστολή"}
+              </Button>
+
+              {submitStatus === "success" && (
+                <p className="mt-3 text-green-600">
+                  Το μήνυμά σας εστάλη επιτυχώς!
+                </p>
+              )}
+
+              {submitStatus === "error" && (
+                <p className="mt-3 text-red-600">
+                  Υπήρξε πρόβλημα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε με
+                  κάποιον άλλον τρόπο
+                </p>
+              )}
             </motion.div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
