@@ -6,8 +6,8 @@ import RepowerLogoLoader from "./repower-logo-loader";
 
 interface PageLoaderProps {
   children: React.ReactNode;
-  initialDelay?: number; // Time in ms before starting to hide the loader
-  transitionDuration?: number; // Duration of the fade out animation
+  initialDelay?: number;
+  transitionDuration?: number;
 }
 
 export default function PageLoader({
