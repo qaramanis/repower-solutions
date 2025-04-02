@@ -9,8 +9,7 @@ const SERVICES_DATA = [
   {
     id: "hm-erga",
     title: "Η/Μ Εργα",
-    image_url:
-      "https://images.unsplash.com/photo-1610650394144-a778795cf585?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image_url: "/images/hm-erga.jpg",
     description: [
       "Σας προσφέρουμε εξειδικευμένες ηλεκτρομηχανικές μελέτες για κτιριακές και βιομηχανικές εγκαταστάσεις, με στόχο την παροχή της βέλτιστης κατασκευαστικής και ενεργειακής λύσης σε κάθε έργο.",
       "Οι μελέτες μας εκπονούνται από διπλωματούχους μηχανικούς με εκτεταμένη εμπειρία σε ένα ευρύ φάσμα ηλεκτρομηχανολογικών έργων. Αναλαμβάνουμε μελέτες εφαρμογής, αποτυπώσεις και προμελέτες.",
@@ -20,8 +19,7 @@ const SERVICES_DATA = [
   {
     id: "texnikos-asfaleias",
     title: "Τεχνικός Ασφαλείας",
-    image_url:
-      "https://images.unsplash.com/photo-1567954970774-58d6aa6c50dc?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image_url: "/images/texnikos-asfaleias.jpg",
     description: [
       "Ο τεχνικός ασφαλείας παρέχει συμβουλευτηκές και υποστηρικτικές υπηρεσίες σε επιχειρήσεις, εγκυόντας την ασφάλεια και την υγιεινή των εργαζομένων",
       "Σε εταιρείες με εώς 50 εργαζόμενους αναλαμβάνουμε εξ' ολοκλήρου τον ρόλο του τεχνικού ασφαλείας, ενώ σε μεγαλύτερες επιχειρήσεις απαιτείται η συνεργασία με γιατρό εργασίας",
@@ -31,8 +29,7 @@ const SERVICES_DATA = [
   {
     id: "exoikonomo",
     title: "Πρόγραμμα Εξοικονομώ",
-    image_url:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop",
+    image_url: "/images/exoikonomo.jpg",
     description: [
       "Η εταιρεία μας, με συνεχή δραστηριότητα στα προγράμματα Εξοικονομώ, παρέχει ολοκληρωμένες υπηρεσίες για την επιτυχή υλοποίηση κάθε έργου. Αναλαμβάνουμε όλες τις απαραίτητες διαδικασίες για, προσφέροντας λύσεις που βελτιώνουν την ενεργειακή απόδοση του χώρου σας",
       "Αναλαμβάνουμε όλες τις διαδικασίες για την ένταξή σας στο πρόγραμμα Εξοικονομώ, από την αρχική αίτηση έως την ολοκλήρωση του έργου. Η ομάδα μας έχει μεγάλη εμπειρία στη διαχείριση τέτοιων επιδοτούμενων προγραμμάτων.",
@@ -43,8 +40,7 @@ const SERVICES_DATA = [
   {
     id: "pistopoihtiko",
     title: "Πιστ. Ενέργειακής Απόδοσης / ΠΕΑ",
-    image_url:
-      "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=2070&auto=format&fit=crop",
+    image_url: "/images/pistopoihtiko.jpg",
     description: [
       "Το Πιστοποιητικό Ενέργειακης Απόδοσης είναι ενα έγγραφο που αποτυπώνει την ενεργειακή κατανάλωση ενός ακινήτου και το κατατάσσει σε μία από τις εεργειακές κατηγορίες, από Α+ εώς Η.",
       "Παράλληλα συνοδέυεται από προτάσεις βελτίωσεις, που στοχεύουν στη μείωση της ενεργειακής κατανάλωσης και στην αναβάθμιση της ενεργειακής απόδοσης του ακινήτου.",
@@ -54,8 +50,7 @@ const SERVICES_DATA = [
   {
     id: "koufomata",
     title: "Κουφώματα",
-    image_url:
-      "https://images.unsplash.com/photo-1601760561441-16420502c7e0?q=80&w=2070&auto=format&fit=crop",
+    image_url: "/images/koufomata.jpg",
     description: [
       "Τα παλία κουφώματα στη σύγχρονη εποχή θεωρούνται ξεπερασμένα, καθώς είναι συνήθως ξύλινα και διαθέτουν μονά τζάμια, με αποτέλεσμα να μην παρέχουν αρκετή ηχομόνωση και θερμομόνωση.",
       "Αυτό συνεπάγεται αυξημένο κόστος συντήρησης, καθώς η έλλειωη σωστής στεγάνωσης οδηγεί σε υψηλές ενεργειακές απώλειες, αυξάνοντας τις δαπάνες για θέρμανση και ψύξη.",
@@ -68,7 +63,7 @@ const SERVICES_DATA = [
     id: "anakainiseis",
     title: "Ανακαινίσεις",
     image_url:
-      "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: [
       "Εάν θέλετε να ανανεώσετε τον χώρο σας, να διαμορφώσετε το νέο σας σπίτι ή να αυξήσετε την αξία του ακίνητού σας πριν από μια πώληση, μια ολοκληρωμένη ανακαίνιση ή αναδιαμόρφωση είναι η ιδανική λύση.",
       "Η εξειδικευμένη ομάδα μηχανικών και τεχνικών μας είναι έτοιμη να σχεδιάσει και να υλοποιήσει τις ιδέες σας, προσαρμοσμένες στις ανάγκες και τις προτιμήσεις σας.",
@@ -79,8 +74,7 @@ const SERVICES_DATA = [
   {
     id: "antlies",
     title: "Αντλίες θερμότητας",
-    image_url:
-      "https://images.unsplash.com/photo-1568634697393-0165d25e7acb?q=80&w=2696&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image_url: "/images/antlies-thermotitas.jpg",
     description: [
       "Οι αντλίες θερμότητας αποτελούν μια ολοκληρωμένη οικονομική και οικολογική λύση για κάθε χώρο.",
       "Η αντλία θερμότητας είναι ένα ολοκληρωμένο σύστημα θέρμανσης, ψύξης και παραγωγής ζεστού νερού χρήσης που λειτουργεί με την τεχνολογία αντλίας θερμότητας αέρα-πηγής.",
@@ -90,8 +84,7 @@ const SERVICES_DATA = [
   {
     id: "fotovoltaika",
     title: "Φωτοβολταϊκά",
-    image_url:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2134&auto=format&fit=crop",
+    image_url: "/images/fotovoltaika.jpg",
     description: [
       "Η παραγωγή ενέργειας από τον ήλιο είναι μια από τις πιο αποδοτικές λύσεις για την εξοικονόμηση ενέργειας. Προσφέρουμε ολοκληρωμένες λύσεις φωτοβολταϊκών συστημάτων για οικιακή και επαγγελματική χρήση.",
       "Τα φωτοβολταϊκά πάνελ μετατρέπουν την ηλιακή ενέργεια σε ηλεκτρική, παρέχοντας καθαρή και οικονομική ηλεκτροδότηση σε κατοικίες και επιχειρήσεις.",
@@ -264,7 +257,7 @@ export default function Services() {
                   <img
                     src={service.image_url}
                     alt={service.title}
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-96 object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </motion.div>
                 <div className="text-2xl max-w-xl mb-8 space-y-4">
