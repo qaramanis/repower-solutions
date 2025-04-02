@@ -17,7 +17,8 @@ export default function Hero() {
       id="hero"
       className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-4"
     >
-      <div className="absolute max-w-4xl top-1/3 md:top-35/100 px-4">
+      {/* Main content - moved lower with margin-top */}
+      <div className="mt-24 md:mt-50 mb-32 max-w-4xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-4 md:mb-6">
           <span className="block">Τεχνικη</span>
           <span className="block">κατασκευαστικη εταιρεια</span>
@@ -31,11 +32,8 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Modified ScrollVelocity container */}
-      <div
-        className="absolute w-full bottom-1/10 md:bottom-1/10 left-0 right-0 overflow-hidden"
-        style={{ height: "150px", zIndex: 10 }}
-      >
+      {/* ScrollVelocity - keeping the same bottom margin */}
+      <div className="w-full mt-auto mb-24">
         <ScrollVelocity
           texts={[
             "η/μ εργα | τεχνικοσ ασφαλειας | αδειοδοτησεισ | ανακαινισεισ | κουφωματα |",
@@ -43,12 +41,11 @@ export default function Hero() {
           ]}
           velocity={50}
           className="text-3xl md:text-5xl font-semibold font-display"
-          parallaxClassName="overflow-hidden h-full"
-          scrollerClassName="h-full"
         />
       </div>
 
-      <div className="absolute bottom-5/100" style={{ zIndex: 20 }}>
+      {/* Button at the very bottom */}
+      <div className="absolute bottom-3/100">
         <Button
           onClick={scrollToNextSection}
           variant="secondary"
