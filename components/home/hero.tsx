@@ -19,14 +19,11 @@ export default function Hero() {
     >
       <div className="absolute max-w-4xl top-1/3 md:top-35/100 px-4">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-4 md:mb-6">
-          <span className="block">Τεχνικες</span>
-          <span className="block">ενεργειακες λυσεις</span>
+          <span className="block">Τεχνικη</span>
+          <span className="block">κατασκευαστικη εταιρεια</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-2xl mt-2 md:mt-4 max-w-2xl mx-auto">
-          <span className="block">
-            εξοικονομηση ενεργειας και αναβαθμιση του χωρου
-          </span>
           <span className="block">και αναβαθμιση του χωρου σας</span>
           <span className="block mt-1 md:mt-0">
             με τις πιο συγχρονες και αποδοτικες λυσεις
@@ -36,7 +33,7 @@ export default function Hero() {
       <div className="absolute w-full bottom-1/10 md:bottom-1/10 sm:block">
         <ScrollVelocity
           texts={[
-            "η/μ εργα | τεχνικοσ ασφαλειας | αδειοδοτησεισ | ανακαινησεισ | κουφωματα |",
+            "η/μ εργα | τεχνικοσ ασφαλειας | αδειοδοτησεισ | ανακαινισεισ | κουφωματα |",
             "repower solutions | repower solutions |",
           ]}
           velocity={50}
