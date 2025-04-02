@@ -14,11 +14,26 @@ const ysabeauSC = Ysabeau_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Repower Solutions",
+  title: "Repower Solutions - Τεχνική Κατασκευαστική Εταιρεία",
   description:
-    "REPOWER SOLUTIONS - Τεχνική Κατασκευαστική Εταιρεία - Φωτοβολταικά - Αντλίες Θερμότητας - Πρόγραμμα Εξοικονομώ - Ανακαινίσεις",
+    "Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας.",
+  openGraph: {
+    title: "Repower Solutions - Τεχνική Κατασκευαστική Εταιρεία",
+    description:
+      "Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας.",
+    images: [
+      {
+        url: "/rs-transparent-128-128.svg",
+        width: 128,
+        height: 128,
+        alt: "Repower Solutions Logo",
+      },
+    ],
+    type: "website",
+    locale: "el_GR",
+  },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/rs-transparent-128-128.svg",
   },
 };
 
@@ -44,6 +59,21 @@ export default function RootLayout({
             gtag('config', 'G-F3351R8EJM');
           `}
         </Script>
+        <meta
+          property="og:title"
+          content="Repower Solutions - Τεχνική Κατασκευαστική Εταιρεία"
+        />
+        <meta
+          property="og:description"
+          content="Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας."
+        />
+        <meta
+          property="og:image"
+          content="http://repowersolutions.gr/repower-solutions-image.jpg"
+        />
+        <meta property="og:url" content="http://repowersolutions.gr" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body className={`${ysabeauSC.variable}`}>
         <PageLoader initialDelay={2000} transitionDuration={800}>

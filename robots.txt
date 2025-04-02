@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://repowersolutions.gr/sitemap.xml

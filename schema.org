@@ -1,0 +1,11 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Repower Solutions",
+  "url": "http://repowersolutions.gr",
+  "logo": "http://repowersolutions.gr/rs-transparent-128-128.svg",
+  "image": "http://repowersolutions.gr/rs-transparent-128-128.svg",
+  "description": "Οι μελέτες που αναλαμβάνουμε καλύπτουν κατηγορίες όπως ηλεκτρολογικά, υδραυλικά, κλιματισμό, εξαερισμό, θέρμανση, πυρασφάλεια και πολλά άλλα. Τεχνικός Ασφαλείας."
+}
+</script>
