@@ -30,7 +30,12 @@ export default function Hero() {
           </span>
         </p>
       </div>
-      <div className="absolute w-full bottom-1/10 md:bottom-1/10 sm:block">
+
+      {/* Modified ScrollVelocity container */}
+      <div
+        className="absolute w-full bottom-1/10 md:bottom-1/10 left-0 right-0 overflow-hidden"
+        style={{ height: "150px", zIndex: 10 }}
+      >
         <ScrollVelocity
           texts={[
             "η/μ εργα | τεχνικοσ ασφαλειας | αδειοδοτησεισ | ανακαινισεισ | κουφωματα |",
@@ -38,9 +43,12 @@ export default function Hero() {
           ]}
           velocity={50}
           className="text-3xl md:text-5xl font-semibold font-display"
+          parallaxClassName="overflow-hidden h-full"
+          scrollerClassName="h-full"
         />
       </div>
-      <div className="absolute bottom-5/100">
+
+      <div className="absolute bottom-5/100" style={{ zIndex: 20 }}>
         <Button
           onClick={scrollToNextSection}
           variant="secondary"

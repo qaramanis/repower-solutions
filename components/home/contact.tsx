@@ -201,7 +201,7 @@ export default function Contact() {
                 id="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </motion.div>
 
@@ -223,7 +223,7 @@ export default function Contact() {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </motion.div>
 
@@ -245,7 +245,7 @@ export default function Contact() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               ></textarea>
             </motion.div>
 
