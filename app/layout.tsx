@@ -16,7 +16,7 @@ const ysabeauSC = Ysabeau_SC({
 export const metadata: Metadata = {
   title: "Repower Solutions",
   description:
-    "REPOWER SOLUTIONS - Τεχνική Κατασκευαστική Εταιρεία - Φωτοβολταϊκά - Αντλίες Θερμότητας - Πρόγραμμα Εξοικονομώ - Ανακαινίσεις",
+    "REPOWER SOLUTIONS - Τεχνική Κατασκευαστική Εταιρεία - Φωτοβολταικά - Αντλίες Θερμότητας - Πρόγραμμα Εξοικονομώ - Ανακαινίσεις",
   icons: {
     icon: "/favicon.ico",
   },

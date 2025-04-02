@@ -20,7 +20,6 @@ export default function Contact() {
     "idle" | "success" | "error"
   >("idle");
 
-  // Handle form input changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -177,7 +176,7 @@ export default function Contact() {
               <MapPin size={24} className="mt-1" />
               <div>
                 <h4 className="text-xl font-medium">Διεύθυνση</h4>
-                <p className="text-lg">Θεσαλονίκης 4, Πυλαία 55535</p>
+                <p className="text-lg">Θεσσαλονίκης 4, Πυλαία 55535</p>
               </div>
             </motion.div>
           </div>

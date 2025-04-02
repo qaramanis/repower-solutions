@@ -18,18 +18,18 @@ export default function Hero() {
       className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-4"
     >
       {/* Main content - moved lower with margin-top */}
-      <div className="mt-24 md:mt-50 mb-32 max-w-4xl">
+      <div className="mt-24 md:mt-55 mb-32 max-w-4xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-4 md:mb-6">
           <span className="block">Τεχνικη</span>
           <span className="block">κατασκευαστικη εταιρεια</span>
         </h1>
 
-        <p className="text-base sm:text-lg md:text-2xl mt-2 md:mt-4 max-w-2xl mx-auto">
+        {/* <p className="text-base sm:text-lg md:text-2xl mt-2 md:mt-4 max-w-2xl mx-auto">
           <span className="block">και αναβαθμιση του χωρου σας</span>
           <span className="block mt-1 md:mt-0">
             με τις πιο συγχρονες και αποδοτικες λυσεις
           </span>
-        </p>
+        </p> */}
       </div>
 
       {/* ScrollVelocity - keeping the same bottom margin */}
