@@ -11,7 +11,7 @@ export default function FooterNav() {
           reserved.
         </div>
 
-        <div className="flex space-x-6 my-4 md:my-0">
+        {/* <div className="flex space-x-6 my-4 md:my-0">
           <Link
             href="#"
             className="text-sm hover:text-gray-300 transition-colors"
@@ -36,11 +36,11 @@ export default function FooterNav() {
           >
             TERMS
           </Link>
-        </div>
+        </div> */}
 
         <div className="flex space-x-4">
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/rep%CE%BFwer-solutions/about/"
             aria-label="linkedin"
             className="hover:text-gray-300 transition-colors"
           >
