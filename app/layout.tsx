@@ -129,10 +129,7 @@ export default function RootLayout({
                   "Thursday",
                   "Friday"
                 ],
-                "opens": "09:00",
-                "closes": "17:00"
               },
-              "priceRange": "€€",
               "servesCuisine": "Τεχνική Κατασκευαστική Εταιρεία"
             }
           `}
