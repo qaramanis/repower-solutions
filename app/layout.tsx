@@ -23,9 +23,9 @@ export const metadata: Metadata = {
       "Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας.",
     images: [
       {
-        url: "/rs-transparent-128-128.svg",
-        width: 128,
-        height: 128,
+        url: "http://repowersolutions.gr/rs-600-600.png",
+        width: 600,
+        height: 600,
         alt: "Repower Solutions Logo",
       },
     ],
@@ -57,6 +57,17 @@ export default function RootLayout({
             gtag('js', new Date());
             
             gtag('config', 'G-F3351R8EJM');
+          `}
+        </Script>
+        <Script id="organization-schema" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Repower Solutions",
+              "url": "http://repowersolutions.gr",
+              "logo": "http://repowersolutions.gr/rs-600-600.png"
+            }
           `}
         </Script>
         <meta
