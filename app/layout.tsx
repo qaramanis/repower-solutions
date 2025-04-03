@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας.",
     images: [
       {
-        url: "http://repowersolutions.gr/rs-600-600.png",
+        url: "https://www.repowersolutions.gr/rs-600-600.png",
         width: 600,
         height: 600,
         alt: "Repower Solutions Logo",
