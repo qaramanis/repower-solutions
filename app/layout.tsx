@@ -70,21 +70,6 @@ export default function RootLayout({
             }
           `}
         </Script>
-        <meta
-          property="og:title"
-          content="Repower Solutions - Τεχνική Κατασκευαστική Εταιρεία"
-        />
-        <meta
-          property="og:description"
-          content="Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας."
-        />
-        <meta
-          property="og:image"
-          content="http://repowersolutions.gr/repower-solutions-image.jpg"
-        />
-        <meta property="og:url" content="http://repowersolutions.gr" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body className={`${ysabeauSC.variable}`}>
         <PageLoader initialDelay={2000} transitionDuration={800}>
