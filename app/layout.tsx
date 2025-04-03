@@ -14,11 +14,11 @@ const ysabeauSC = Ysabeau_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Repower Solutions - Τεχνική Κατασκευαστική Εταιρεία",
+  title: "Repower Solutions | Τεχνική Κατασκευαστική Εταιρεία",
   description:
     "Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας.",
   openGraph: {
-    title: "Repower Solutions - Τεχνική Κατασκευαστική Εταιρεία",
+    title: "Repower Solutions | Τεχνική Κατασκευαστική Εταιρεία",
     description:
       "Μελέτες ηλεκτρολογικών, υδραυλικών, κλιματισμού, εξαερισμού, θέρμανσης, πυρασφάλειας. Τεχνικός Ασφαλείας, ανακαινίσεις, φωτοβολταϊκά, αντλίες θερμότητας.",
     images: [
@@ -64,9 +64,9 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Repower Solutions",
-              "url": "http://repowersolutions.gr",
-              "logo": "http://repowersolutions.gr/rs-600-600.png"
+              "name": "Repower Solutions | Τεχνική Κατασκευαστική Εταιρεία",
+              "url": "https://www.repowersolutions.gr",
+              "logo": "https://www.repowersolutions.gr/rs-600-600.png"
             }
           `}
         </Script>
