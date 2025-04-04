@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
+import GoogleMapsIframe from "./maps-iframe";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -179,6 +180,9 @@ export default function Contact() {
                 <p className="text-lg">Θεσσαλονίκης 4, Πυλαία 55535</p>
               </div>
             </motion.div>
+
+            {/* Google Maps Iframe */}
+            <GoogleMapsIframe isVisible={isVisible} />
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

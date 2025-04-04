@@ -2,7 +2,7 @@
 
 import Hero from "./hero";
 import Services from "./services";
-import Contact from "./contact";
+import Contact from "./contact/contact";
 
 export default function Home() {
   return (
