@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
-import GoogleMapsIframe from "./maps-iframe";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -180,9 +179,6 @@ export default function Contact() {
                 <p className="text-lg">Θεσσαλονίκης 4, Πυλαία 55535</p>
               </div>
             </motion.div>
-
-            {/* Google Maps Iframe */}
-            <GoogleMapsIframe isVisible={isVisible} />
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -284,7 +280,45 @@ export default function Contact() {
             </motion.div>
           </form>
         </div>
+        {/* Map Section - Added below the contact form and contact info
+        <motion.div
+          className="w-full mt-16 p-6 "
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: 0.8 }}
+        >
+          <div className="w-full h-96 md:h-[450px] rounded-lg overflow-hidden shadow-lg border-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.9537859966735!2d22.992945!3d40.576935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a838fcf146b0b5%3A0x5acf8dbea98eba56!2zzpjOtc-Dz4POsc67zr_Ovc6vzrrOt8-CIDA0LCDOoM-FzrvOsc6vzrEgNTU1IDM1!5e0!3m2!1sel!2sgr!4v1711644855414!5m2!1sel!2sgr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </motion.div> */}
       </div>
+      {/* Map Section - Added below the contact form and contact info */}
+      <motion.div
+        className="w-full mt-16 p-6 "
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: 0.8 }}
+      >
+        <div className="w-full h-96 md:h-[450px] rounded-lg overflow-hidden shadow-lg border-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.9537859966735!2d22.992945!3d40.576935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a838fcf146b0b5%3A0x5acf8dbea98eba56!2zzpjOtc-Dz4POsc67zr_Ovc6vzrrOt8-CIDA0LCDOoM-FzrvOsc6vzrEgNTU1IDM1!5e0!3m2!1sel!2sgr!4v1711644855414!5m2!1sel!2sgr"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </motion.div>
     </section>
   );
 }
