@@ -77,7 +77,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Repower Solutions",
-              "alternateName": "Repower Solutions | Τεχνική Κατασκευαστική Εταιρεία",
+              "alternateName": "Repower Solutions | Τεχνική Κατασκευαστική Εταιρεία | Πυλαία Θεσσαλονίκης",
               "url": "https://www.repowersolutions.gr",
               "logo": "https://www.repowersolutions.gr/rs-600-600.png",
               "image": "https://www.repowersolutions.gr/rs-600-600.png",
