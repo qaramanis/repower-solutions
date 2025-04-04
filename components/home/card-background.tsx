@@ -21,7 +21,7 @@ export default function CardBackground() {
     <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-0 overflow-hidden">
       <div className="relative w-full max-w-5xl h-screen">
         {/* Center card - show different versions based on device */}
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-75 blur-[4px]">
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-65 blur-[4px]">
           {isMobile ? (
             <div className="w-[280px] h-[280px] relative">
               <img
