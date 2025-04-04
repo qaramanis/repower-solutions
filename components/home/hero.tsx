@@ -15,10 +15,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-4"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center text-center"
     >
       {/* Main content - moved lower with margin-top */}
-      <div className="mt-24 md:mt-55 mb-32 max-w-4xl">
+      <div className="mt-48 md:mt-64 mb-32 max-w-4xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-4 md:mb-6">
           <span className="block">Τεχνικη</span>
           <span className="block">κατασκευαστικη εταιρεια</span>
