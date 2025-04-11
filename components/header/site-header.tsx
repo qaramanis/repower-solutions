@@ -37,7 +37,6 @@ export function SiteHeader() {
         >
           <RepowerSolutionsLogo className="min-w-96" />
         </Link>
-
         <HeaderNav />
       </div>
     </header>
