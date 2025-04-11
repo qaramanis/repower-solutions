@@ -3,14 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin } from "lucide-react";
 import GoogleMapsIframe from "./maps-iframe";
+import ContactInfo from "./contact-info";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,7 +27,6 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -64,7 +62,6 @@ export default function Contact() {
     } finally {
       setIsSubmitting(false);
 
-      // Reset status after 5 seconds
       setTimeout(() => {
         setSubmitStatus("idle");
       }, 5000);
@@ -106,82 +103,8 @@ export default function Contact() {
             σας και να σας προτείνουμε την καλύτερη λύση!
           </p>
         </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <motion.h3
-              className="text-3xl font-semibold"
-              initial={{ opacity: 0, x: -20 }}
-              animate={
-                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-              }
-              transition={{
-                duration: 1.5,
-                ease: [0.23, 1, 0.32, 1],
-                delay: 0.2,
-              }}
-            >
-              Στοιχεία Επικοινωνίας
-            </motion.h3>
-
-            <motion.div
-              className="flex items-center space-x-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={
-                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-              }
-              transition={{
-                duration: 1.5,
-                ease: [0.23, 1, 0.32, 1],
-                delay: 0.3,
-              }}
-            >
-              <Phone size={24} />
-              <div>
-                <h4 className="text-xl font-medium">Τηλέφωνο</h4>
-                <p className="text-lg">gr +30 694 856 8652</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center space-x-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={
-                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-              }
-              transition={{
-                duration: 1.5,
-                ease: [0.23, 1, 0.32, 1],
-                delay: 0.4,
-              }}
-            >
-              <Mail size={24} />
-              <div>
-                <h4 className="text-xl font-medium">Email</h4>
-                <p className="text-lg">info.repowersolutions@gmail.com</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-start space-x-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={
-                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-              }
-              transition={{
-                duration: 1.5,
-                ease: [0.23, 1, 0.32, 1],
-                delay: 0.5,
-              }}
-            >
-              <MapPin size={24} className="mt-1" />
-              <div>
-                <h4 className="text-xl font-medium">Διεύθυνση</h4>
-                <p className="text-lg">Θεσσαλονίκης 4, Πυλαία 55535</p>
-              </div>
-            </motion.div>
-          </div>
-
+          <ContactInfo isVisible={isVisible} />
           <form onSubmit={handleSubmit} className="space-y-6">
             <motion.div
               className="space-y-2"
@@ -281,10 +204,7 @@ export default function Contact() {
             </motion.div>
           </form>
         </div>
-        {/* Map Section - Added below the contact form and contact info */}
-        {/* <GoogleMapsIframe isVisible={isVisible} /> */}
       </div>
-      {/* Map Section - Added below the contact form and contact info */}
       <GoogleMapsIframe isVisible={isVisible} />
     </section>
   );

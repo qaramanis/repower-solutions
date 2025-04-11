@@ -4,6 +4,7 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import ScrollReveal from "../scroll-reveal";
+import { Separator } from "../ui/separator";
 
 const SERVICES_DATA = [
   {
@@ -210,42 +211,55 @@ export default function Services() {
                 className="min-h-[75vh] pt-8 -mt-8"
                 initial={{ opacity: 0 }}
                 animate={{
+                  x: activeSection === service.id ? 0 : 10,
                   opacity: activeSection === service.id ? 1 : 0.6,
-                  y: activeSection === service.id ? 0 : 10,
                 }}
                 transition={{
                   duration: 0.5,
                   ease: [0.175, 0.885, 0.32, 1],
                 }}
               >
-                {/* <motion.h3
-                  className="text-5xl font-semibold mb-6"
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{
-                    y: activeSection === service.id ? 0 : 20,
-                    opacity: activeSection === service.id ? 1 : 0.8,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.175, 0.885, 0.32, 1],
-                    delay: 0.1,
-                  }}
-                >
-                  {service.title}
-                </motion.h3> */}
-                <ScrollReveal
-                  baseOpacity={0}
-                  enableBlur={false}
-                  baseRotation={10}
-                  blurStrength={10}
-                >
-                  {service.title}
-                </ScrollReveal>
+                <div className="my-5">
+                  <motion.div
+                    initial={{ opacity: 0, rotate: 10, y: 30 }}
+                    whileInView={{ opacity: 1, rotate: 0, y: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.175, 0.885, 0.32, 1],
+                    }}
+                    animate={{
+                      x: activeSection === service.id ? 0 : 30,
+                      opacity: activeSection === service.id ? 1 : 0,
+                    }}
+                  >
+                    <p className="text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] font-semibold">
+                      {service.title}
+                    </p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, width: 0 }}
+                    whileInView={{ opacity: 1, width: "100%" }}
+                    transition={{
+                      duration: 1,
+                      ease: [0.175, 0.885, 0.32, 1],
+                      delay: 0.3,
+                    }}
+                    animate={{
+                      x: activeSection === service.id ? 0 : 30,
+                      opacity: activeSection === service.id ? 1 : 0,
+                    }}
+                    className="my-4 overflow-hidden"
+                  >
+                    <Separator />
+                  </motion.div>
+                </div>
+
                 <motion.div
                   className="my-6 overflow-hidden rounded-lg"
                   initial={{ y: 30, opacity: 0 }}
                   animate={{
-                    y: activeSection === service.id ? 0 : 30,
+                    x: activeSection === service.id ? 0 : 30,
                     opacity: activeSection === service.id ? 1 : 0,
                   }}
                   transition={{
@@ -266,7 +280,7 @@ export default function Services() {
                       key={index}
                       initial={{ y: 30, opacity: 0 }}
                       animate={{
-                        y: activeSection === service.id ? 0 : 30,
+                        x: activeSection === service.id ? 0 : 30,
                         opacity: activeSection === service.id ? 1 : 0,
                       }}
                       transition={{
