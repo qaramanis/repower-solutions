@@ -124,12 +124,12 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* Adjust container width for mobile */
   .container {
-    width: 92%;
-    max-width: 92%;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: hidden;
   }
 
   /* Adjust text sizes for mobile */
