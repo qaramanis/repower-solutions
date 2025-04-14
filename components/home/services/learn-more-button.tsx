@@ -28,8 +28,8 @@ export default function LearnMoreButton({
       className="mt-8"
     >
       <Link href={`/${serviceId}`}>
-        <Button variant="default" className="px-6 py-2.5 text-lg">
-          Μάθετε περισσότερα
+        <Button variant="default" className="px-6 py-2.5 text-lg rounded-lg">
+          Μάθετε  Περισσότερα
         </Button>
       </Link>
     </motion.div>

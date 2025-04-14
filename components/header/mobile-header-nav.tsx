@@ -1,19 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ChevronDown } from "lucide-react";
 import HeaderLink from "./header-link";
+import Link from "next/link";
 
 export default function MobileHeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("hero");
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (isOpen && !target.closest(".mobile-nav-container")) {
         setIsOpen(false);
+        setIsServicesOpen(false);
       }
     };
 
@@ -60,7 +64,13 @@ export default function MobileHeaderNav() {
         behavior: "smooth",
       });
       setIsOpen(false);
+      setIsServicesOpen(false);
     }
+  };
+
+  const toggleServices = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsServicesOpen(!isServicesOpen);
   };
 
   return (
@@ -102,20 +112,84 @@ export default function MobileHeaderNav() {
                   onClick={() => scrollToSection("hero")}
                 />
               </div>
-              <div
-                className="cursor-pointer"
-                onClick={() => scrollToSection("services")}
-              >
-                <HeaderLink
-                  text="υπηρεσιες"
-                  href="#"
-                  isActive={activeSection === "services"}
-                  isHovered={null}
-                  setIsHovered={() => {}}
-                  index={1}
-                  onClick={() => scrollToSection("services")}
-                />
+
+              <div className="relative">
+                <div
+                  className="flex items-center justify-center cursor-pointer"
+                  onClick={toggleServices}
+                >
+                  <HeaderLink
+                    text="υπηρεσιες"
+                    href="#"
+                    isActive={activeSection === "services"}
+                    isHovered={null}
+                    setIsHovered={() => {}}
+                    index={1}
+                  />
+                  <motion.div
+                    animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="ml-2"
+                  >
+                    <ChevronDown size={18} className="mt-1" />
+                  </motion.div>
+                </div>
+
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      ref={servicesRef}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="pl-4 mt-2 flex flex-col gap-2 overflow-hidden"
+                    >
+                      <Link href="/hm-erga">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Η/Μ Εργα
+                        </div>
+                      </Link>
+                      <Link href="/texnikos-asfaleias">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Τεχνικός Ασφαλείας
+                        </div>
+                      </Link>
+                      <Link href="/exoikonomo">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Πρόγραμμα Εξοικονομώ
+                        </div>
+                      </Link>
+                      <Link href="/pistopoihtiko">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Πιστ. Ενεργειακής Απόδοσης
+                        </div>
+                      </Link>
+                      <Link href="/koufomata">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Κουφώματα
+                        </div>
+                      </Link>
+                      <Link href="/anakainiseis">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Ανακαινίσεις
+                        </div>
+                      </Link>
+                      <Link href="/antlies">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Αντλίες Θερμότητας
+                        </div>
+                      </Link>
+                      <Link href="/fotovoltaika">
+                        <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          Φωτοβολταϊκά
+                        </div>
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
+
               <div
                 className="cursor-pointer"
                 onClick={() => scrollToSection("contact")}
