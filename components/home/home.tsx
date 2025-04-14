@@ -1,7 +1,7 @@
 "use client";
 
 import Hero from "./hero";
-import Services from "./services";
+import Services from "./services/services";
 import Contact from "./contact/contact";
 
 export default function Home() {

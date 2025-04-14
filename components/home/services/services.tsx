@@ -3,8 +3,12 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import ScrollReveal from "../scroll-reveal";
-import { Separator } from "../ui/separator";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import { Leaf } from "lucide-react";
+import ServiceCard from "./service-card";
+import ServicesNavigation from "./service-navigation";
 
 const SERVICES_DATA = [
   {
@@ -101,6 +105,7 @@ export default function Services() {
   const sectionRefs = useRef<Record<string, React.RefObject<HTMLDivElement>>>(
     {}
   );
+
   useEffect(() => {
     SERVICES_DATA.forEach((service) => {
       sectionRefs.current[service.id] =
@@ -171,129 +176,27 @@ export default function Services() {
     >
       <div className="container mx-auto max-w-8xl px-4">
         <div className="flex flex-col md:flex-row gap-75">
-          <motion.div
-            className="md:w-2/5 md:sticky md:top-32 h-fit"
-            style={{ alignSelf: "flex-start" }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-          >
-            <h2 className="text-6xl font-bold mb-8">Προσφερομενες Υπηρεσιες</h2>
-            <div className="flex flex-col space-y-4">
-              {SERVICES_DATA.map((service) => (
-                <motion.button
-                  key={service.id}
-                  className={`text-left text-2xl text-black/90 transition-colors ${
-                    activeSection === service.id
-                      ? "text-primary font-semibold"
-                      : "hover:text-gray-600"
-                  }`}
-                  onClick={() => scrollToSection(service.id)}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.1 }}
-                >
-                  {service.title}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
+          <ServicesNavigation
+            services={SERVICES_DATA.map((service) => ({
+              id: service.id,
+              title: service.title,
+            }))}
+            activeSection={activeSection}
+            onSectionChange={scrollToSection}
+          />
 
           <div className="md:w-3/5 space-y-32 pb-20">
             {SERVICES_DATA.map((service) => (
-              <motion.div
+              <ServiceCard
                 key={service.id}
                 ref={(ref) => {
                   if (ref) {
                     sectionRefs.current[service.id] = { current: ref };
                   }
                 }}
-                id={service.id}
-                className="min-h-[75vh] pt-8 -mt-8"
-                initial={{ opacity: 0 }}
-                animate={{
-                  x: activeSection === service.id ? 0 : 10,
-                  opacity: activeSection === service.id ? 1 : 0.6,
-                }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.175, 0.885, 0.32, 1],
-                }}
-              >
-                <div className="my-5">
-                  <motion.div
-                    initial={{ opacity: 0, rotate: 10, y: 30 }}
-                    whileInView={{ opacity: 1, rotate: 0, y: 0 }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.175, 0.885, 0.32, 1],
-                    }}
-                    animate={{
-                      x: activeSection === service.id ? 0 : 30,
-                      opacity: activeSection === service.id ? 1 : 0,
-                    }}
-                  >
-                    <p className="text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] font-semibold">
-                      {service.title}
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, width: 0 }}
-                    whileInView={{ opacity: 1, width: "100%" }}
-                    transition={{
-                      duration: 1,
-                      ease: [0.175, 0.885, 0.32, 1],
-                      delay: 0.3,
-                    }}
-                    animate={{
-                      x: activeSection === service.id ? 0 : 30,
-                      opacity: activeSection === service.id ? 1 : 0,
-                    }}
-                    className="my-4 overflow-hidden"
-                  >
-                    <Separator />
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  className="my-6 overflow-hidden rounded-lg"
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{
-                    x: activeSection === service.id ? 0 : 30,
-                    opacity: activeSection === service.id ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.175, 0.885, 0.32, 1],
-                    delay: 0.1,
-                  }}
-                >
-                  <img
-                    src={service.image_url}
-                    alt={service.title}
-                    className="w-full h-96 object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </motion.div>
-                <div className="text-2xl max-w-xl mb-8 space-y-4">
-                  {service.description.map((paragraph, index) => (
-                    <motion.p
-                      key={index}
-                      initial={{ y: 30, opacity: 0 }}
-                      animate={{
-                        x: activeSection === service.id ? 0 : 30,
-                        opacity: activeSection === service.id ? 1 : 0,
-                      }}
-                      transition={{
-                        duration: 0.6,
-                        ease: [0.175, 0.885, 0.32, 1],
-                        delay: 0.2 + index * 0.1,
-                      }}
-                    >
-                      {paragraph}
-                    </motion.p>
-                  ))}
-                </div>
-              </motion.div>
+                service={service}
+                isActive={activeSection === service.id}
+              />
             ))}
           </div>
         </div>
