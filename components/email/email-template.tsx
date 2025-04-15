@@ -3,12 +3,14 @@ import * as React from "react";
 interface EmailTemplateProps {
   fullName: string;
   email: string;
+  phone?: string;
   content: string;
 }
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   fullName,
   email,
+  phone,
   content,
 }) => (
   <div
@@ -91,6 +93,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
               display: "flex",
               alignItems: "center",
               color: "#4361ee",
+              marginBottom: "8px",
             }}
           >
             <img
@@ -102,6 +105,26 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             />
             <span style={{ fontWeight: "500" }}>{email}</span>
           </div>
+
+          {phone && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "#4361ee",
+                marginBottom: "8px",
+              }}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/455/455705.png"
+                alt="Phone Icon"
+                width="20"
+                height="20"
+                style={{ marginRight: "8px" }}
+              />
+              <span style={{ fontWeight: "500" }}>{phone}</span>
+            </div>
+          )}
         </div>
       </div>
 

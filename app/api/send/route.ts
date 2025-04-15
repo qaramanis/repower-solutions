@@ -3,16 +3,26 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
+    const { fullName, email, phone, contents } = await request.json();
+
+    if (!fullName || !email || !contents) {
+      return Response.json(
+        { error: "Name, email, and message are required" },
+        { status: 400 }
+      );
+    }
+
     const { data, error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["apostkaram@gmail.com"],
-      subject: "Hello world",
+      from: "Repower Solutions <onboarding@resend.dev>",
+      to: ["apostkaram@gmail.com"], // Change this to your actual recipient email
+      subject: `Μήνυμα από: ${fullName}`,
       react: await EmailTemplate({
-        fullName: "Apostolos",
-        email: "apostkaram@gmail.com",
-        content: "Test Meil",
+        fullName,
+        email,
+        phone,
+        content: contents,
       }),
     });
 
@@ -20,8 +30,9 @@ export async function POST() {
       return Response.json({ error }, { status: 500 });
     }
 
-    return Response.json(data);
+    return Response.json({ success: true, data });
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error("Error sending email:", error);
+    return Response.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
