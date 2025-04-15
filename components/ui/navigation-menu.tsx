@@ -58,7 +58,6 @@ function NavigationMenuItem({
   );
 }
 
-// Remove all background styles from the trigger
 const navigationMenuTriggerStyle = cva(
   "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:text-primary data-[state=open]:focus:bg-transparent data-[state=open]:bg-transparent focus-visible:ring-transparent outline-none transition-colors focus-visible:outline-0 focus-visible:shadow-none shadow-none"
 );
@@ -107,7 +106,7 @@ function NavigationMenuViewport({
   return (
     <div
       className={cn(
-        "absolute top-full left-0 isolate z-50 flex justify-center"
+        "absolute top-full right-0 isolate z-50 flex justify-center"
       )}
     >
       <NavigationMenuPrimitive.Viewport
