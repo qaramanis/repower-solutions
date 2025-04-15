@@ -108,12 +108,12 @@ const ServiceCard = React.forwardRef<
             {paragraph}
           </motion.p>
         ))}
-        <LearnMoreButton
-          serviceId={service.id}
-          isActive={isActive}
-          descriptionLength={service.description.length}
-        />
       </div>
+      <LearnMoreButton
+        serviceId={service.id}
+        isActive={isActive}
+        descriptionLength={service.description.length}
+      />
     </motion.div>
   );
 });
