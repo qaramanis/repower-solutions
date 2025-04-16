@@ -2,7 +2,6 @@
 
 import FooterNav from "@/components/footer/footer";
 import Home from "@/components/home/home";
-import PageLoader from "@/components/loader/page-loader";
 
 export default function HomePage() {
   return (

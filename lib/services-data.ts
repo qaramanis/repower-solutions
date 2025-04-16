@@ -129,7 +129,8 @@ export const SERVICES_DATA: ServiceData[] = [
   {
     id: "adeies-leitourgias",
     title: "Αδειες Λειτουργίας",
-    image_url: "",
+    image_url:
+      "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subtitle:
       "Νόμιμη και Αμεση Εναρξη της Επιχείρησής σας με Πλήρης Υποστήριξη",
     description: [
@@ -144,7 +145,8 @@ export const SERVICES_DATA: ServiceData[] = [
   {
     id: "meletes-pyrasfaleias",
     title: "Μελέτες Πυρασφάλειας",
-    image_url: "",
+    image_url:
+      "https://images.unsplash.com/photo-1583683402528-8b6e3002ffda?q=80&w=1320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subtitle:
       "Εγκυρες, Εγκεκριμένες Μελέτες Πυρασφάλειας από Εξειδικευμένους Μηχανικούς",
     description: [
@@ -160,7 +162,8 @@ export const SERVICES_DATA: ServiceData[] = [
   {
     id: "afthereta",
     title: "Τακτοποίηση Αυθαιρέτων",
-    image_url: "",
+    image_url:
+      "https://images.unsplash.com/photo-1730473313094-dc277964d872?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subtitle:
       "Νόμιμη Ρύθμιση Αυθαίρετων Κατασκευών & Χρήσεων από Εξειδικευμένους Μηχανικούς",
     description: [
@@ -176,7 +179,8 @@ export const SERVICES_DATA: ServiceData[] = [
   {
     id: "hlektronikh-taytothta",
     title: "Ηλεκτρονική Ταυτότητα Κτιρίου",
-    image_url: "",
+    image_url:
+      "https://images.unsplash.com/vector-1739805925567-c19c8860e69d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subtitle: "Αμεση Έκδοση Ηλεκτρονικής Ταυτότητας για Ακίνητα κάθε τύπου",
     description: [
       "Προσφέρουμε ολοκληρωμένες υπηρεσίες για την έκδοση Ηλεκτρονικής Ταυτότητας Κτιρίου ή Αυτοτελούς Διηρημένης Ιδιοκτησίας, όπως ορίζει η σύγχρονη πολεοδομική νομοθεσία.",
