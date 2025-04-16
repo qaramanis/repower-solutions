@@ -14,7 +14,6 @@ import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SERVICES_DATA } from "@/lib/services-data";
-import { Separator } from "../ui/separator";
 
 export default function HeaderNav() {
   const [activeSection, setActiveSection] = useState<string>("hero");
@@ -126,17 +125,23 @@ export default function HeaderNav() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul
-                      className={`grid gap-3 p-4 md:w-[500px] md:grid-cols-${columnCount} lg:w-[900px]`}
+                      className={`grid gap-3 p-4 md:w-[500px] md:grid-cols-3 lg:w-[900px]`}
                     >
                       {SERVICES_DATA.map((service) => (
                         <li key={service.id}>
-                          <Link href={service.url} legacyBehavior passHref>
-                            <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                              <div className="mb-2 text-xl font-medium">
+                          <Link
+                            href={service.url || `/${service.id}`}
+                            legacyBehavior
+                            passHref
+                          >
+                            <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-start rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
+                              <div className="mb-2 text-xl font-medium leading-tight">
                                 {service.title}
                               </div>
                               <p className="text-lg leading-tight text-gray-700">
-                                {service.subtitle || service.title}
+                                {service.subtitle ||
+                                  service.description ||
+                                  service.title}
                               </p>
                             </NavigationMenuLink>
                           </Link>
