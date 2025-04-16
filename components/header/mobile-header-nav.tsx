@@ -1,19 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ChevronDown } from "lucide-react";
 import HeaderLink from "./header-link";
+import Link from "next/link";
+import { SERVICES_DATA } from "@/lib/services-data";
 
 export default function MobileHeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("hero");
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (isOpen && !target.closest(".mobile-nav-container")) {
         setIsOpen(false);
+        setIsServicesOpen(false);
       }
     };
 
@@ -60,7 +65,13 @@ export default function MobileHeaderNav() {
         behavior: "smooth",
       });
       setIsOpen(false);
+      setIsServicesOpen(false);
     }
+  };
+
+  const toggleServices = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsServicesOpen(!isServicesOpen);
   };
 
   return (
@@ -89,7 +100,7 @@ export default function MobileHeaderNav() {
           >
             <div className="flex flex-col gap-4">
               <div
-                className="cursor-pointer"
+                className="cursor-pointer flex justify-center"
                 onClick={() => scrollToSection("hero")}
               >
                 <HeaderLink
@@ -102,22 +113,70 @@ export default function MobileHeaderNav() {
                   onClick={() => scrollToSection("hero")}
                 />
               </div>
-              <div
-                className="cursor-pointer"
-                onClick={() => scrollToSection("services")}
-              >
-                <HeaderLink
-                  text="υπηρεσιες"
-                  href="#"
-                  isActive={activeSection === "services"}
-                  isHovered={null}
-                  setIsHovered={() => {}}
-                  index={1}
-                  onClick={() => scrollToSection("services")}
-                />
+
+              <div className="h-px w-full bg-gray-200"></div>
+
+              <div className="relative">
+                <div
+                  className="flex items-center justify-center cursor-pointer"
+                  onClick={toggleServices}
+                >
+                  <HeaderLink
+                    text="υπηρεσιες"
+                    href="#"
+                    isActive={activeSection === "services"}
+                    isHovered={null}
+                    setIsHovered={() => {}}
+                    index={1}
+                  />
+                  <motion.div
+                    animate={{ rotate: isServicesOpen ? -180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-1"
+                  >
+                    <ChevronDown size={18} />
+                  </motion.div>
+                </div>
+
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      ref={servicesRef}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="pl-4 mt-2 flex flex-col gap-2 overflow-hidden"
+                    >
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.div
+                            ref={servicesRef}
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="pl-4 mt-2 flex flex-col gap-2 overflow-hidden"
+                          >
+                            {SERVICES_DATA.map((service) => (
+                              <Link href={service.url} key={service.id}>
+                                <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                                  {service.title}
+                                </div>
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
+
+              <div className="h-px w-full bg-gray-200"></div>
+
               <div
-                className="cursor-pointer"
+                className="cursor-pointer flex justify-center"
                 onClick={() => scrollToSection("contact")}
               >
                 <HeaderLink

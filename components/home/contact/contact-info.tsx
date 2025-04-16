@@ -37,7 +37,7 @@ export default function ContactInfo({ isVisible }: ContactInfoProps) {
           <p className="text-lg">gr +30 694 856 8652</p>
         </div>
       </motion.div>
-      <Separator />
+      <Separator className="bg-gray-500" />
       <motion.div
         className="flex items-center space-x-4"
         initial={{ opacity: 0, x: -20 }}
@@ -54,7 +54,7 @@ export default function ContactInfo({ isVisible }: ContactInfoProps) {
           <p className="text-lg">info.repowersolutions@gmail.com</p>
         </div>
       </motion.div>
-      <Separator />
+      <Separator className="bg-gray-500" />
       <motion.div
         className="flex items-start space-x-4"
         initial={{ opacity: 0, x: -20 }}
@@ -71,7 +71,7 @@ export default function ContactInfo({ isVisible }: ContactInfoProps) {
           <p className="text-lg">Θεσσαλονίκης 4, Πυλαία 55535</p>
         </div>
       </motion.div>
-      <Separator className="md:hidden" />
+      <Separator className="md:hidden bg-gray-500" />
     </div>
   );
 }

@@ -132,7 +132,6 @@ body {
     overflow-x: hidden;
   }
 
-  /* Adjust text sizes for mobile */
   h1 {
     font-size: clamp(2rem, 8vw, 3rem);
     line-height: 1.2;
