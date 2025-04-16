@@ -2,18 +2,13 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "motion/react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import FooterNav from "@/components/footer/footer";
-
 import Contact from "../home/contact/contact";
 import PageTransition from "../page-transition";
-import { useRouter } from "next/navigation";
 import BackButton from "./back-button";
 
-export default function ProgrammaExoikonomoPage() {
+export default function AnakainiseisPage() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [toService, setToService] = useState(true);
@@ -47,7 +42,7 @@ export default function ProgrammaExoikonomoPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
               >
-                Προγράμματα Εξοικονομώ στη Θεσσαλονίκη
+                Ανακαινίσεις στη Θεσσαλονίκη
               </motion.h1>
 
               <motion.h2
@@ -60,7 +55,7 @@ export default function ProgrammaExoikonomoPage() {
                   delay: 0.1,
                 }}
               >
-                Ολοκληρωμένες Λύσεις Ενεργειακής Αναβάθμισης
+                Ολοκληρωμένες Λύσεις για Κατοικίες & Επαγγελματικούς Χώρους
               </motion.h2>
 
               <motion.div
@@ -86,15 +81,17 @@ export default function ProgrammaExoikonomoPage() {
                 }}
               >
                 <p className="text-lg md:text-xl mb-4">
-                  Η εταιρεία μας, με πολυετή εμπειρία και συνεχή δραστηριότητα
-                  στα Προγράμματα Εξοικονομώ στη Θεσσαλονίκη, προσφέρει
-                  ολοκληρωμένες λύσεις για την ενεργειακή αναβάθμιση κατοικιών
-                  και επαγγελματικών χώρων.
+                  Αναζητάτε αξιόπιστη εταιρεία για ανακαινίσεις στη Θεσσαλονίκη;
+                  Είτε πρόκειται για την ανακαίνιση της κατοικίας σας, την
+                  αναδιαμόρφωση του επαγγελματικού σας χώρου ή την αισθητική και
+                  λειτουργική αναβάθμιση ενός ακινήτου προς πώληση ή ενοικίαση,
+                  η ομάδα μας είναι δίπλα σας με ολοκληρωμένες λύσεις.
                 </p>
                 <p className="text-lg md:text-xl mb-4">
-                  Αναλαμβάνουμε όλες τις διαδικασίες ένταξης στο πρόγραμμα, από
-                  την αρχική αξιολόγηση μέχρι την τελική υλοποίηση των
-                  παρεμβάσεων.
+                  Η τεχνική κατασκευαστική μας εταιρεία, με έδρα τη Θεσσαλονίκη,
+                  διαθέτει εξειδικευμένους μηχανικούς, αρχιτέκτονες και
+                  τεχνικούς, που αναλαμβάνουν κάθε έργο ανακαίνισης σπιτιού ή
+                  επαγγελματικού χώρου από τη μελέτη μέχρι την παράδοση.
                 </p>
               </motion.div>
             </div>
@@ -110,18 +107,18 @@ export default function ProgrammaExoikonomoPage() {
               }}
             >
               <img
-                src="/images/exoikonomo.jpg"
-                alt="Πρόγραμμα Εξοικονομώ"
+                src="https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Ανακαινίσεις"
                 className="rounded-lg shadow-lg object-cover w-full max-w-[500px] h-auto"
               />
             </motion.div>
           </div>
         </section>
 
-        <section className="py-16 px-4 md:px-8 bg-blue-300">
+        <section className="py-16 px-4 md:px-8 bg-amber-100">
           <div className="max-w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Υπηρεσίες Ενεργειακής Αναβάθμισης
+              Τι σας προσφέρουμε
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -134,12 +131,12 @@ export default function ProgrammaExoikonomoPage() {
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
                   <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Αντικατάσταση κουφωμάτων
+                  Ολική ή μερική ανακαίνιση
                 </h3>
                 <p className="text-lg">
-                  Προσφέρουμε αντικατάσταση κουφωμάτων με ενεργειακά αποδοτικά
-                  θερμοδιακοπτόμενα κουφώματα αλουμινίου ή συνθετικών PVC,
-                  εξασφαλίζοντας βέλτιστη θερμομόνωση και ηχομόνωση.
+                  Αναλαμβάνουμε την ολική ή μερική ανακαίνιση εσωτερικών και
+                  εξωτερικών χώρων, με σεβασμό στις ανάγκες και το budget του
+                  έργου σας.
                 </p>
               </motion.div>
 
@@ -156,12 +153,12 @@ export default function ProgrammaExoikonomoPage() {
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
                   <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Αντλίες θερμότητας
+                  Διαμόρφωση εσωτερικών χώρων
                 </h3>
                 <p className="text-lg">
-                  Προμήθεια & εγκατάσταση αντλιών θερμότητας υψηλής απόδοσης που
-                  μειώνουν δραστικά το κόστος θέρμανσης και ψύξης, προσφέροντας
-                  σημαντική εξοικονόμηση ενέργειας.
+                  Εξειδικευόμαστε στη διαμόρφωση κουζίνας, μπάνιου, υπνοδωματίων
+                  και σαλονιού, προσφέροντας λειτουργικές και αισθητικά άρτιες
+                  λύσεις.
                 </p>
               </motion.div>
 
@@ -178,12 +175,12 @@ export default function ProgrammaExoikonomoPage() {
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
                   <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Ηλιακά συστήματα
+                  Εξειδικευμένες λύσεις
                 </h3>
                 <p className="text-lg">
-                  Εγκαθιστούμε ηλιακά συστήματα για παραγωγή ζεστού νερού χρήσης
-                  (ηλιακοί θερμοσίφωνες) με στόχο τη μείωση της κατανάλωσης
-                  ηλεκτρικής ενέργειας.
+                  Παρέχουμε εξειδικευμένες λύσεις για ανακαίνιση Airbnb ή
+                  ακινήτων προς πώληση, με στόχο τη μεγιστοποίηση της αξίας και
+                  της ελκυστικότητάς τους.
                 </p>
               </motion.div>
 
@@ -200,12 +197,12 @@ export default function ProgrammaExoikonomoPage() {
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
                   <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Θερμομόνωση
+                  Αρχιτεκτονικός σχεδιασμός
                 </h3>
                 <p className="text-lg">
-                  Εφαρμόζουμε θερμομόνωση για μείωση απωλειών και βελτίωση της
-                  ενεργειακής απόδοσης του κτιρίου, προσφέροντας μεγαλύτερη
-                  άνεση και οικονομία στη θέρμανση και ψύξη.
+                  Προσφέρουμε αρχιτεκτονικό σχεδιασμό με έμφαση στη
+                  λειτουργικότητα και την αισθητική, ώστε να αξιοποιήσετε στο
+                  μέγιστο τον διαθέσιμο χώρο.
                 </p>
               </motion.div>
             </div>
@@ -213,9 +210,9 @@ export default function ProgrammaExoikonomoPage() {
         </section>
 
         {/* <section className="py-16 px-4 md:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Η Διαδικασία Ένταξης στο Πρόγραμμα Εξοικονομώ
+              Η Διαδικασία Ανακαίνισης
             </h2>
 
             <div className="grid md:grid-cols-4 gap-6 mt-12">
@@ -229,10 +226,10 @@ export default function ProgrammaExoikonomoPage() {
                 <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">1</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Αξιολόγηση</h3>
+                <h3 className="text-xl font-semibold mb-2">Αξιολόγηση Χώρου</h3>
                 <p>
                   Αρχική επίσκεψη και αξιολόγηση του χώρου για προσδιορισμό των
-                  απαιτούμενων παρεμβάσεων.
+                  αναγκών και των δυνατοτήτων.
                 </p>
               </motion.div>
 
@@ -250,12 +247,10 @@ export default function ProgrammaExoikonomoPage() {
                 <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">2</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Προετοιμασία Φακέλου
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Σχεδιασμός</h3>
                 <p>
-                  Συγκέντρωση των απαραίτητων δικαιολογητικών και προετοιμασία
-                  του φακέλου υποβολής.
+                  Αρχιτεκτονικός σχεδιασμός και πρόταση που συνδυάζει αισθητική,
+                  λειτουργικότητα και προϋπολογισμό.
                 </p>
               </motion.div>
 
@@ -273,12 +268,10 @@ export default function ProgrammaExoikonomoPage() {
                 <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">3</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Υποβολή & Έγκριση
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Κατασκευή</h3>
                 <p>
-                  Υποβολή αίτησης στο πρόγραμμα και διαχείριση της διαδικασίας
-                  μέχρι την έγκριση.
+                  Εκτέλεση των εργασιών ανακαίνισης με έμπειρο συνεργείο και
+                  υλικά υψηλής ποιότητας.
                 </p>
               </motion.div>
 
@@ -296,20 +289,20 @@ export default function ProgrammaExoikonomoPage() {
                 <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">4</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Υλοποίηση</h3>
+                <h3 className="text-xl font-semibold mb-2">Παράδοση</h3>
                 <p>
-                  Εκτέλεση των εγκεκριμένων παρεμβάσεων και ολοκλήρωση του έργου
-                  με υψηλή ποιότητα.
+                  Τελικός έλεγχος ποιότητας και παράδοση του χώρου έτοιμου προς
+                  χρήση.
                 </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-4 md:px-8 bg-blue-400">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 px-4 md:px-8 bg-amber-100">
+          <div className="max-w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Οφέλη Ενεργειακής Αναβάθμισης
+              Οφέλη Επαγγελματικής Ανακαίνισης
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -320,12 +313,10 @@ export default function ProgrammaExoikonomoPage() {
                 transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <h3 className="text-xl font-semibold mb-4">
-                  Εξοικονόμηση Ενέργειας
-                </h3>
+                <h3 className="text-xl font-semibold mb-4">Αύξηση Αξίας</h3>
                 <p className="text-lg">
-                  Μείωση της κατανάλωσης ενέργειας έως και 60%, με αντίστοιχη
-                  μείωση των λογαριασμών θέρμανσης και ψύξης.
+                  Η επαγγελματική ανακαίνιση αυξάνει σημαντικά την αξία πώλησης
+                  ή μίσθωσης του ακινήτου σας.
                 </p>
               </motion.div>
 
@@ -340,10 +331,12 @@ export default function ProgrammaExoikonomoPage() {
                 }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <h3 className="text-xl font-semibold mb-4">Βελτίωση Άνεσης</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Εξοικονόμηση Ενέργειας
+                </h3>
                 <p className="text-lg">
-                  Αναβάθμιση της θερμικής και ακουστικής άνεσης, για καλύτερες
-                  συνθήκες διαβίωσης και εργασίας.
+                  Σύγχρονες λύσεις και υλικά που συμβάλλουν στην ενεργειακή
+                  αναβάθμιση και εξοικονόμηση πόρων μακροπρόθεσμα.
                 </p>
               </motion.div>
 
@@ -359,11 +352,11 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-xl font-semibold mb-4">
-                  Αύξηση Αξίας Ακινήτου
+                  Βελτίωση Ποιότητας Ζωής
                 </h3>
                 <p className="text-lg">
-                  Τα ενεργειακά αναβαθμισμένα ακίνητα έχουν υψηλότερη αξία
-                  πώλησης και μίσθωσης στην αγορά.
+                  Λειτουργικοί και αισθητικά αναβαθμισμένοι χώροι που προσφέρουν
+                  καλύτερη ποιότητα καθημερινής ζωής.
                 </p>
               </motion.div>
             </div>

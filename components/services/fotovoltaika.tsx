@@ -2,18 +2,23 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "motion/react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import FooterNav from "@/components/footer/footer";
-
 import Contact from "../home/contact/contact";
 import PageTransition from "../page-transition";
-import { useRouter } from "next/navigation";
 import BackButton from "./back-button";
+import {
+  Sun,
+  Battery,
+  CloudLightning,
+  Leaf,
+  Sprout,
+  Receipt,
+  Wrench,
+  CheckCircle,
+} from "lucide-react";
 
-export default function ProgrammaExoikonomoPage() {
+export default function FotovoltaikaPage() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [toService, setToService] = useState(true);
@@ -47,7 +52,7 @@ export default function ProgrammaExoikonomoPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
               >
-                Προγράμματα Εξοικονομώ στη Θεσσαλονίκη
+                Φωτοβολταϊκά Συστήματα
               </motion.h1>
 
               <motion.h2
@@ -60,7 +65,7 @@ export default function ProgrammaExoikonomoPage() {
                   delay: 0.1,
                 }}
               >
-                Ολοκληρωμένες Λύσεις Ενεργειακής Αναβάθμισης
+                για Οικίες & Επιχειρήσεις – Θεσσαλονίκη
               </motion.h2>
 
               <motion.div
@@ -86,15 +91,14 @@ export default function ProgrammaExoikonomoPage() {
                 }}
               >
                 <p className="text-lg md:text-xl mb-4">
-                  Η εταιρεία μας, με πολυετή εμπειρία και συνεχή δραστηριότητα
-                  στα Προγράμματα Εξοικονομώ στη Θεσσαλονίκη, προσφέρει
-                  ολοκληρωμένες λύσεις για την ενεργειακή αναβάθμιση κατοικιών
-                  και επαγγελματικών χώρων.
+                  Η εταιρεία μας, με έδρα την Θεσσαλονίκη, προσφέρει
+                  ολοκληρωμένες λύσεις φωτοβολταϊκών συστημάτων "με το κλειδί
+                  στο χέρι" για οικιακές και επαγγελματικές εγκαταστάσεις.
                 </p>
                 <p className="text-lg md:text-xl mb-4">
-                  Αναλαμβάνουμε όλες τις διαδικασίες ένταξης στο πρόγραμμα, από
-                  την αρχική αξιολόγηση μέχρι την τελική υλοποίηση των
-                  παρεμβάσεων.
+                  Εξασφαλίζοντας εξοικονόμηση, αυτονομία και πράσινη ενέργεια,
+                  τα φωτοβολταϊκά συστήματα αποτελούν μια αποδοτική επένδυση με
+                  σημαντικά οφέλη για το περιβάλλον και την τσέπη σας.
                 </p>
               </motion.div>
             </div>
@@ -110,18 +114,18 @@ export default function ProgrammaExoikonomoPage() {
               }}
             >
               <img
-                src="/images/exoikonomo.jpg"
-                alt="Πρόγραμμα Εξοικονομώ"
+                src="/images/fotovoltaika.jpg"
+                alt="Φωτοβολταϊκά Συστήματα"
                 className="rounded-lg shadow-lg object-cover w-full max-w-[500px] h-auto"
               />
             </motion.div>
           </div>
         </section>
 
-        <section className="py-16 px-4 md:px-8 bg-blue-300">
+        <section className="py-16 px-4 md:px-8 bg-green-200">
           <div className="max-w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Υπηρεσίες Ενεργειακής Αναβάθμισης
+              Με την εγκατάσταση ενός φωτοβολταϊκού συστήματος επιτυγχάνετε:
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -133,13 +137,13 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
-                  <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Αντικατάσταση κουφωμάτων
+                  <Sun className="text-yellow-500 mr-2" size={28} />
+                  Αυτοπαραγωγή ενέργειας
                 </h3>
                 <p className="text-lg">
-                  Προσφέρουμε αντικατάσταση κουφωμάτων με ενεργειακά αποδοτικά
-                  θερμοδιακοπτόμενα κουφώματα αλουμινίου ή συνθετικών PVC,
-                  εξασφαλίζοντας βέλτιστη θερμομόνωση και ηχομόνωση.
+                  Παράγετε τη δική σας ηλεκτρική ενέργεια από τον ήλιο,
+                  μειώνοντας σημαντικά ή και μηδενίζοντας τον λογαριασμό
+                  ρεύματος.
                 </p>
               </motion.div>
 
@@ -155,13 +159,13 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
-                  <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Αντλίες θερμότητας
+                  <Battery className="text-green-600 mr-2" size={28} />
+                  Ενεργειακή αυτονομία
                 </h3>
                 <p className="text-lg">
-                  Προμήθεια & εγκατάσταση αντλιών θερμότητας υψηλής απόδοσης που
-                  μειώνουν δραστικά το κόστος θέρμανσης και ψύξης, προσφέροντας
-                  σημαντική εξοικονόμηση ενέργειας.
+                  Με τη χρήση συστημάτων αποθήκευσης (μπαταρίες), εξασφαλίζετε
+                  ενεργειακή αυτονομία ακόμη και σε περιπτώσεις διακοπών
+                  ρεύματος.
                 </p>
               </motion.div>
 
@@ -177,13 +181,13 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
-                  <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Ηλιακά συστήματα
+                  <Receipt className="text-blue-600 mr-2" size={28} />
+                  Εξοικονόμηση μέσω Net-Billing
                 </h3>
                 <p className="text-lg">
-                  Εγκαθιστούμε ηλιακά συστήματα για παραγωγή ζεστού νερού χρήσης
-                  (ηλιακοί θερμοσίφωνες) με στόχο τη μείωση της κατανάλωσης
-                  ηλεκτρικής ενέργειας.
+                  Το σύστημα Net-Billing επιτρέπει τον συμψηφισμό της
+                  παραγόμενης με την καταναλισκόμενη ενέργεια, προσφέροντας
+                  σημαντική εξοικονόμηση κόστους.
                 </p>
               </motion.div>
 
@@ -199,45 +203,44 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-2xl font-semibold mb-4 flex items-center">
-                  <span className="text-green-600 mr-2 text-3xl">✓</span>
-                  Θερμομόνωση
+                  <Leaf className="text-green-600 mr-2" size={28} />
+                  Επιδοτήσεις έως 100%
                 </h3>
                 <p className="text-lg">
-                  Εφαρμόζουμε θερμομόνωση για μείωση απωλειών και βελτίωση της
-                  ενεργειακής απόδοσης του κτιρίου, προσφέροντας μεγαλύτερη
-                  άνεση και οικονομία στη θέρμανση και ψύξη.
+                  Εκμεταλλευτείτε επιδοτήσεις έως και 100% μέσω προγραμμάτων
+                  όπως το "Εξοικονομώ" και το "Φωτοβολταϊκά στη Στέγη".
                 </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* <section className="py-16 px-4 md:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 px-4 md:px-8">
+          <div className="max-w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Η Διαδικασία Ένταξης στο Πρόγραμμα Εξοικονομώ
+              Τι περιλαμβάνει το πακέτο "Φωτοβολταϊκά με το Κλειδί στο Χέρι"
             </h2>
 
-            <div className="grid md:grid-cols-4 gap-6 mt-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               <motion.div
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center border border-green-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">1</span>
+                <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="text-green-600" size={28} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Αξιολόγηση</h3>
+                <h3 className="text-xl font-semibold mb-2">Τεχνική Μελέτη</h3>
                 <p>
-                  Αρχική επίσκεψη και αξιολόγηση του χώρου για προσδιορισμό των
-                  απαιτούμενων παρεμβάσεων.
+                  Αυτοψία και τεχνική μελέτη για τη βέλτιστη απόδοση του
+                  συστήματος στο χώρο σας.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center border border-green-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -247,20 +250,20 @@ export default function ProgrammaExoikonomoPage() {
                 }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">2</span>
+                <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <CloudLightning className="text-green-600" size={28} />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">
-                  Προετοιμασία Φακέλου
+                  Επιδοτήσεις & Αδειοδοτήσεις
                 </h3>
                 <p>
-                  Συγκέντρωση των απαραίτητων δικαιολογητικών και προετοιμασία
-                  του φακέλου υποβολής.
+                  Υποβολή φακέλου για επιδοτήσεις και διεκπεραίωση όλων των
+                  αδειοδοτήσεων.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center border border-green-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -270,20 +273,18 @@ export default function ProgrammaExoikonomoPage() {
                 }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">3</span>
+                <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Wrench className="text-green-600" size={28} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Υποβολή & Έγκριση
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Εγκατάσταση</h3>
                 <p>
-                  Υποβολή αίτησης στο πρόγραμμα και διαχείριση της διαδικασίας
-                  μέχρι την έγκριση.
+                  Επαγγελματική εγκατάσταση από εξειδικευμένο συνεργείο με
+                  πιστοποιημένα υλικά.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center border border-green-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -293,23 +294,23 @@ export default function ProgrammaExoikonomoPage() {
                 }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">4</span>
+                <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Sprout className="text-green-600" size={28} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Υλοποίηση</h3>
+                <h3 className="text-xl font-semibold mb-2">Υποστήριξη</h3>
                 <p>
-                  Εκτέλεση των εγκεκριμένων παρεμβάσεων και ολοκλήρωση του έργου
-                  με υψηλή ποιότητα.
+                  Διασύνδεση με τον πάροχο ηλεκτρικής ενέργειας και after-sales
+                  τεχνική υποστήριξη.
                 </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-4 md:px-8 bg-blue-400">
-          <div className="max-w-7xl mx-auto">
+        {/* <section className="py-16 px-4 md:px-8 bg-green-100">
+          <div className="max-w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Οφέλη Ενεργειακής Αναβάθμισης
+              Τύποι Φωτοβολταϊκών Συστημάτων
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -321,11 +322,12 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-xl font-semibold mb-4">
-                  Εξοικονόμηση Ενέργειας
+                  Οικιακά Φωτοβολταϊκά
                 </h3>
                 <p className="text-lg">
-                  Μείωση της κατανάλωσης ενέργειας έως και 60%, με αντίστοιχη
-                  μείωση των λογαριασμών θέρμανσης και ψύξης.
+                  Συστήματα για κατοικίες που μειώνουν το κόστος ηλεκτρικής
+                  ενέργειας και αυξάνουν την ενεργειακή αυτονομία του σπιτιού
+                  σας.
                 </p>
               </motion.div>
 
@@ -340,10 +342,13 @@ export default function ProgrammaExoikonomoPage() {
                 }}
                 viewport={{ once: false, margin: "-100px" }}
               >
-                <h3 className="text-xl font-semibold mb-4">Βελτίωση Άνεσης</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Επαγγελματικά Συστήματα
+                </h3>
                 <p className="text-lg">
-                  Αναβάθμιση της θερμικής και ακουστικής άνεσης, για καλύτερες
-                  συνθήκες διαβίωσης και εργασίας.
+                  Μεγαλύτερης κλίμακας συστήματα για επιχειρήσεις που μειώνουν
+                  το λειτουργικό κόστος και ενισχύουν το πράσινο προφίλ της
+                  εταιρείας.
                 </p>
               </motion.div>
 
@@ -359,11 +364,12 @@ export default function ProgrammaExoikonomoPage() {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 <h3 className="text-xl font-semibold mb-4">
-                  Αύξηση Αξίας Ακινήτου
+                  Συστήματα με Μπαταρίες
                 </h3>
                 <p className="text-lg">
-                  Τα ενεργειακά αναβαθμισμένα ακίνητα έχουν υψηλότερη αξία
-                  πώλησης και μίσθωσης στην αγορά.
+                  Ολοκληρωμένες λύσεις με αποθήκευση ενέργειας για μέγιστη
+                  αυτονομία, κατάλληλες για περιοχές με συχνές διακοπές
+                  ρεύματος.
                 </p>
               </motion.div>
             </div>

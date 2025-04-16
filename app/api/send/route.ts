@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Repower Solutions <onboarding@resend.dev>",
-      to: ["apostkaram@gmail.com"], // Change this to your actual recipient email
+      to: ["info.repowersolutions@gmail.com"],
       subject: `Μήνυμα από: ${fullName}`,
       react: await EmailTemplate({
         fullName,
