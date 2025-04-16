@@ -15,6 +15,7 @@ import { ChevronUp, ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, delay, motion } from "framer-motion";
 import { SERVICES_DATA } from "@/lib/services-data";
 import { usePathname, useRouter } from "next/navigation";
+import { useNavigation } from "@/context/navigation-context";
 
 export default function HeaderNav() {
   const [activeSection, setActiveSection] = useState<string>("hero");
@@ -22,6 +23,7 @@ export default function HeaderNav() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const router = useRouter();
+  const { navigateTo } = useNavigation();
 
   const toggleMenu = () => {
     setIsMenuExpanded(!isMenuExpanded);
@@ -59,18 +61,43 @@ export default function HeaderNav() {
 
   const scrollToSection = (sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
+
     if (!isHomePage) {
-      router.push(`/#${sectionId}`);
-    }
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetPosition = sectionId === "hero" ? 0 : element.offsetTop - 45;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      navigateTo("/");
+
+      sessionStorage.setItem("scrollTarget", sectionId);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetPosition =
+          sectionId === "hero" ? 0 : element.offsetTop - 45;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
+
+  useEffect(() => {
+    if (isHomePage) {
+      const scrollTarget = sessionStorage.getItem("scrollTarget");
+      if (scrollTarget) {
+        sessionStorage.removeItem("scrollTarget");
+        setTimeout(() => {
+          const element = document.getElementById(scrollTarget);
+          if (element) {
+            const offsetPosition =
+              scrollTarget === "hero" ? 0 : element.offsetTop - 45;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "instant",
+            });
+          }
+        }, 50);
+      }
+    }
+  }, [isHomePage]);
 
   const navItemStyles =
     "text-xl sm:text-xl md:text-3xl py-2 px-3 text-black font-medium transition-colors hover:text-primary";

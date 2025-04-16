@@ -6,6 +6,8 @@ import AuroraHeader from "@/components/header/aurora-header";
 import { SiteHeader } from "@/components/header/site-header";
 import PageLoader from "@/components/loader/page-loader";
 import CardBackground from "@/components/home/card-background";
+import { AnimatePresence } from "framer-motion";
+import { NavigationProvider } from "@/context/navigation-context";
 
 const ysabeauSC = Ysabeau_SC({
   weight: "400",
@@ -187,14 +189,16 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${ysabeauSC.variable}`}>
-        <PageLoader initialDelay={2000} transitionDuration={800}>
-          <div>
-            <AuroraHeader />
-          </div>
-          <CardBackground />
-          <SiteHeader />
-          {children}
-        </PageLoader>
+        <NavigationProvider>
+          <PageLoader initialDelay={2000} transitionDuration={800}>
+            <div>
+              <AuroraHeader />
+            </div>
+            <CardBackground />
+            <SiteHeader />
+            {children}
+          </PageLoader>
+        </NavigationProvider>
       </body>
     </html>
   );

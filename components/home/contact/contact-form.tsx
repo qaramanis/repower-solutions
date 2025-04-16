@@ -89,7 +89,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           id="fullName"
           value={formData.fullName}
           onChange={handleChange}
-          className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full p-3 bg-white/90 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           required
         />
       </motion.div>
@@ -112,7 +112,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           id="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full p-3 bg-white/90 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           required
         />
       </motion.div>
@@ -135,7 +135,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           id="phone"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full p-3 bg-white/90 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
         />
       </motion.div>
 
@@ -157,7 +157,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           rows={5}
           value={formData.content}
           onChange={handleChange}
-          className="w-full p-3 bg-white/90 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full p-3 bg-white/90 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           required
         ></textarea>
       </motion.div>

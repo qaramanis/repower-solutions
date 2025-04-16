@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import { usePathname } from "next/navigation";
+import { useNavigation } from "@/context/navigation-context";
 
 interface PageTransitionProps {
   children: React.ReactNode;
@@ -13,6 +15,9 @@ export default function PageTransition({
   toService = true,
 }: PageTransitionProps) {
   const [isClient, setIsClient] = useState(false);
+  const { isTransitioning } = useNavigation();
+  const pathname = usePathname();
+  const isServicePage = pathname !== "/";
 
   useEffect(() => {
     setIsClient(true);
@@ -25,17 +30,13 @@ export default function PageTransition({
   return (
     <motion.div
       initial={{
-        x: toService ? "-100%" : "100%",
+        x: isServicePage ? "100%" : "100%",
         opacity: 0,
       }}
       animate={{
-        x: 0,
-        opacity: 1,
+        x: isTransitioning ? (isServicePage ? "-100%" : "100%") : 0,
+        opacity: isTransitioning ? 0 : 1,
       }}
-    //   exit={{
-    //     x: toService ? "100%" : "-100%",
-    //     opacity: 0,
-    //   }}
       transition={{
         type: "tween",
         ease: [0.25, 1, 0.5, 1],
