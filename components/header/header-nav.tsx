@@ -12,12 +12,16 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown, Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, delay, motion } from "framer-motion";
 import { SERVICES_DATA } from "@/lib/services-data";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function HeaderNav() {
   const [activeSection, setActiveSection] = useState<string>("hero");
   const [isMenuExpanded, setIsMenuExpanded] = useState(true);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsMenuExpanded(!isMenuExpanded);
@@ -53,7 +57,11 @@ export default function HeaderNav() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!isHomePage) {
+      router.push(`/#${sectionId}`);
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       const offsetPosition = sectionId === "hero" ? 0 : element.offsetTop - 45;
@@ -65,17 +73,13 @@ export default function HeaderNav() {
   };
 
   const navItemStyles =
-    "text-xl sm:text-xl md:text-3xl p-2 text-black font-medium transition-colors hover:text-primary";
-  const activeNavItemStyles = "text-primary font-semibold";
-
-  // Calculate number of columns based on number of services
-  const columnCount = Math.min(3, Math.ceil(SERVICES_DATA.length / 4));
+    "text-xl sm:text-xl md:text-3xl py-2 px-3 text-black font-medium transition-colors hover:text-primary";
 
   return (
     <motion.div
       className="flex justify-end"
       animate={{
-        width: isMenuExpanded ? "auto" : "64px", // Control the collapsed width
+        width: isMenuExpanded ? "auto" : "64px",
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
@@ -93,14 +97,8 @@ export default function HeaderNav() {
                 <NavigationMenuItem>
                   <Link href="#" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={cn(
-                        navItemStyles,
-                        activeSection === "hero" && activeNavItemStyles
-                      )}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection("hero");
-                      }}
+                      className={cn(navItemStyles)}
+                      onClick={(e) => scrollToSection("hero", e)}
                     >
                       αρχικη
                     </NavigationMenuLink>
@@ -112,14 +110,9 @@ export default function HeaderNav() {
                     className={cn(
                       navItemStyles,
                       "shadow-none hover:shadow-none",
-                      activeSection === "services" && activeNavItemStyles
+                      activeSection === "services"
                     )}
-                    onClick={(e) => {
-                      if (activeSection !== "services") {
-                        e.preventDefault();
-                        scrollToSection("services");
-                      }
-                    }}
+                    onClick={(e) => scrollToSection("services", e)}
                   >
                     υπηρεσιες
                   </NavigationMenuTrigger>
@@ -154,14 +147,8 @@ export default function HeaderNav() {
                 <NavigationMenuItem>
                   <Link href="#" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={cn(
-                        navItemStyles,
-                        activeSection === "contact" && activeNavItemStyles
-                      )}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection("contact");
-                      }}
+                      className={cn(navItemStyles, activeSection === "contact")}
+                      onClick={(e) => scrollToSection("contact", e)}
                     >
                       επικοινωνια
                     </NavigationMenuLink>
