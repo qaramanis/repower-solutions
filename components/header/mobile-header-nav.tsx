@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import HeaderLink from "./header-link";
 import Link from "next/link";
+import { SERVICES_DATA } from "@/lib/services-data";
 
 export default function MobileHeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -113,7 +114,6 @@ export default function MobileHeaderNav() {
                 />
               </div>
 
-              {/* Separator after αρχικη */}
               <div className="h-px w-full bg-gray-200"></div>
 
               <div className="relative">
@@ -158,46 +158,13 @@ export default function MobileHeaderNav() {
                             transition={{ duration: 0.3 }}
                             className="pl-4 mt-2 flex flex-col gap-2 overflow-hidden"
                           >
-                            <Link href="/hm-erga">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Η/Μ Εργα
-                              </div>
-                            </Link>
-                            <Link href="/texnikos-asfaleias">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Τεχνικός Ασφαλείας
-                              </div>
-                            </Link>
-                            <Link href="/exoikonomo">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Πρόγραμμα Εξοικονομώ
-                              </div>
-                            </Link>
-                            <Link href="/pistopoihtiko">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Πιστ. Ενεργειακής Απόδοσης
-                              </div>
-                            </Link>
-                            <Link href="/koufomata">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Κουφώματα
-                              </div>
-                            </Link>
-                            <Link href="/anakainiseis">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Ανακαινίσεις
-                              </div>
-                            </Link>
-                            <Link href="/antlies">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Αντλίες Θερμότητας
-                              </div>
-                            </Link>
-                            <Link href="/fotovoltaika">
-                              <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                Φωτοβολταϊκά
-                              </div>
-                            </Link>
+                            {SERVICES_DATA.map((service) => (
+                              <Link href={service.url} key={service.id}>
+                                <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
+                                  {service.title}
+                                </div>
+                              </Link>
+                            ))}
                           </motion.div>
                         )}
                       </AnimatePresence>

@@ -6,13 +6,15 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SERVICES_DATA } from "@/lib/services-data";
+import { Separator } from "../ui/separator";
 
 export default function HeaderNav() {
   const [activeSection, setActiveSection] = useState<string>("hero");
@@ -67,6 +69,9 @@ export default function HeaderNav() {
     "text-xl sm:text-xl md:text-3xl p-2 text-black font-medium transition-colors hover:text-primary";
   const activeNavItemStyles = "text-primary font-semibold";
 
+  // Calculate number of columns based on number of services
+  const columnCount = Math.min(3, Math.ceil(SERVICES_DATA.length / 4));
+
   return (
     <motion.div
       className="flex justify-end"
@@ -120,192 +125,23 @@ export default function HeaderNav() {
                     υπηρεσιες
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-3 lg:w-[900px]">
-                      <li>
-                        <Link
-                          href="/programma-exoikonomo"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Πρόγραμμα Εξοικονομώ
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Προγράμματα Εξοικονομώ στη Θεσσαλονίκη –
-                              Ολοκληρωμένες Λύσεις Ενεργειακής Αναβάθμισης
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/anakainiseis" legacyBehavior passHref>
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Ανακαινίσεις
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Ανακαινίσεις στη Θεσσαλονίκη – Ολοκληρωμένες
-                              Λύσεις για Κατοικίες &amp; Επαγγελματικούς Χώρους
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/fotovoltaika" legacyBehavior passHref>
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Φωτοβολταικά
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Φωτοβολταικά Συστήματα για Οικίες &amp;
-                              Επιχειρήσεις – Θεσσαλονίκη
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/antlies-thermothtas"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Αντλίες Θερμότητας
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Αντλίες Θερμότητας στη Θεσσαλονίκη Οικονομική
-                              &amp; Αποδοτική Λύση για Θέρμανση και Ψύξη
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/texnikos-asfaleias"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Τεχνικός Ασφαλείας
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Τεχνικός Ασφαλείας στη Θεσσαλονίκη – Υποστήριξη
-                              για Επιχειρήσεις
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/pistopoihtiko" legacyBehavior passHref>
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Ενεργειακος Επιθεωρητης &amp; Πιστ. Ενεργειακής
-                              Απόδοσης
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Πιστοποιητικό Ενεργειακής Απόδοσης (ΠΕΑ) –
-                              Ενεργειακός Επιθεωρητής Θεσσαλονίκη
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/hm-meletes" legacyBehavior passHref>
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Η/Μ Μελετες
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Ηλεκτρομηχανολογικές Μελέτες <br />
-                              (Η/Μ) στη Θεσσαλονίκη
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/oikodomikes-adeies"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Οικοδομικες Αδειες
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Ολοκληρωμένη Διαχείριση Οικοδομικών Αδειών από
-                              Μηχανικούς με Εμπειρία
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/adeies-leitourgias"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Αδειες Λειτουργιας
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Νόμιμη και Άμεση Έναρξη της Επιχείρησής σας, με
-                              Πλήρη Υποστήριξη από Εξειδικευμένους Μηχανικούς
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/adeies-leitourgias"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Μελετες Πυρασφάλειας
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Έγκυρες, Εγκεκριμένες Μελέτες Πυρασφάλειας από
-                              Εξειδικευμένους Μηχανικούς
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/afthereta" legacyBehavior passHref>
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Τακτοποιηση Αυθαιρετων
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Νόμιμη Ρύθμιση Αυθαίρετων Κατασκευών &amp; Χρήσεων
-                              από Εξειδικευμένους Μηχανικούς
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/hlektronikh-taytothta"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
-                            <div className="mb-2 text-lg font-medium">
-                              Ηλεκτρονικη Ταυτοτητα Κτιριου
-                            </div>
-                            <p className="text-sm leading-tight text-gray-700">
-                              Άμεση Έκδοση Ηλεκτρονικής Ταυτότητας για Ακίνητα
-                              κάθε τύπου
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
+                    <ul
+                      className={`grid gap-3 p-4 md:w-[500px] md:grid-cols-${columnCount} lg:w-[900px]`}
+                    >
+                      {SERVICES_DATA.map((service) => (
+                        <li key={service.id}>
+                          <Link href={service.url} legacyBehavior passHref>
+                            <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white p-4 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black">
+                              <div className="mb-2 text-xl font-medium">
+                                {service.title}
+                              </div>
+                              <p className="text-lg leading-tight text-gray-700">
+                                {service.subtitle || service.title}
+                              </p>
+                            </NavigationMenuLink>
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
