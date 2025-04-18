@@ -1,17 +1,21 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import HeaderLink from "./header-link";
 import Link from "next/link";
 import { SERVICES_DATA } from "@/lib/services-data";
+import { useNavigation } from "@/context/navigation-context";
+import { usePathname, useRouter } from "next/navigation";
+import NavigationLink from "../navigation-link";
 
 export default function MobileHeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("hero");
   const servicesRef = useRef<HTMLDivElement>(null);
+  const { navigateTo } = useNavigation();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -69,9 +73,29 @@ export default function MobileHeaderNav() {
     }
   };
 
+  const handleHomeClick = () => {
+    setIsOpen(false);
+    setIsServicesOpen(false);
+
+    if (isHomePage) {
+      scrollToSection("hero");
+    } else {
+      setTimeout(() => {
+        navigateTo("/");
+      }, 100);
+    }
+  };
+
   const toggleServices = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsServicesOpen(!isServicesOpen);
+  };
+
+  const handleServiceClick = (e: React.MouseEvent, url: string) => {
+    e.preventDefault();
+    navigateTo(url);
+    setIsOpen(false);
+    setIsServicesOpen(false);
   };
 
   return (
@@ -99,18 +123,15 @@ export default function MobileHeaderNav() {
             className="absolute top-16 right-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 z-50 w-64"
           >
             <div className="flex flex-col gap-4">
-              <div
-                className="cursor-pointer flex justify-center"
-                onClick={() => scrollToSection("hero")}
-              >
+              <div className="cursor-pointer flex justify-center">
                 <HeaderLink
                   text="αρχικη"
-                  href="#"
+                  href="/"
                   isActive={activeSection === "hero"}
                   isHovered={null}
                   setIsHovered={() => {}}
                   index={0}
-                  onClick={() => scrollToSection("hero")}
+                  onClick={handleHomeClick}
                 />
               </div>
 
@@ -148,26 +169,15 @@ export default function MobileHeaderNav() {
                       transition={{ duration: 0.3 }}
                       className="pl-4 mt-2 flex flex-col gap-2 overflow-hidden"
                     >
-                      <AnimatePresence>
-                        {isServicesOpen && (
-                          <motion.div
-                            ref={servicesRef}
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="pl-4 mt-2 flex flex-col gap-2 overflow-hidden"
-                          >
-                            {SERVICES_DATA.map((service) => (
-                              <Link href={service.url} key={service.id}>
-                                <div className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer">
-                                  {service.title}
-                                </div>
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      {SERVICES_DATA.map((service) => (
+                        <div
+                          key={service.id}
+                          onClick={(e) => handleServiceClick(e, service.url)}
+                          className="text-sm p-2 hover:bg-gray-100 rounded cursor-pointer"
+                        >
+                          {service.title}
+                        </div>
+                      ))}
                     </motion.div>
                   )}
                 </AnimatePresence>

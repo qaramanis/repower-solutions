@@ -22,7 +22,6 @@ export default function HeaderNav() {
   const [isMenuExpanded, setIsMenuExpanded] = useState(true);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-  const router = useRouter();
   const { navigateTo } = useNavigation();
 
   const toggleMenu = () => {
@@ -63,9 +62,19 @@ export default function HeaderNav() {
     e.preventDefault();
 
     if (!isHomePage) {
-      navigateTo("/");
-
-      sessionStorage.setItem("scrollTarget", sectionId);
+      if (sectionId === "contact") {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetPosition = element.offsetTop - 45;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      } else {
+        sessionStorage.setItem("scrollTarget", sectionId);
+        navigateTo("/");
+      }
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -94,7 +103,7 @@ export default function HeaderNav() {
               behavior: "instant",
             });
           }
-        }, 50);
+        }, 100);
       }
     }
   }, [isHomePage]);

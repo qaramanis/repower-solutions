@@ -53,7 +53,7 @@ export default function Services() {
       return {
         id: service.id,
         top: rect.top + scrollTop - 500,
-        bottom: rect.bottom + scrollTop - 500,
+        bottom: rect.bottom + scrollTop - 100,
       };
     });
 
